@@ -1,0 +1,53 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins/reset.scss';
+@import '../../../scss/mixins/utils.scss';
+@import '../../../scss/mixins/text.scss';
+
+.input {
+  @include reset-input();
+  @include focus();
+  @include textRegular-16();
+  background-color: rgb(67, 66, 66);
+  color: rgb(255, 255, 255);
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  &:focus {
+    background-color: #232323;
+  }
+
+  &:hover {
+    background-color: #232323;
+  }
+
+  &::placeholder {
+  }
+}
+
+.icon {
+  @include vertical-center();
+  left: 12px;
+}
+
+.icon_input {
+  padding-left: 35px;
+}
+
+.custom {
+  border: $search-border;
+  border-radius: 0;
+  border-radius: 6px 0 0 6px;
+  padding: 13px 115px 13px 15px;
+  transition: background-color 200ms ease;
+  width: 100%;
+}
+
+.advanced {
+  border: $search-border;
+  border-radius: 0;
+  padding: 7px 50px 7px 15px;
+  transition: background-color 200ms ease;
+  width: 100%;
+}

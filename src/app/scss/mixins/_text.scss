@@ -1,0 +1,13 @@
+@import '../variables.scss';
+@mixin basic-text {
+  color: $second-color;
+  font-family: $font-family-nunito;
+  font-style: normal;
+  line-height: normal;
+}
+
+@mixin textRegular-16 {
+  @include basic-text();
+  font-size: 16px;
+  font-weight: $font-weight-regular;
+}

@@ -1,0 +1,73 @@
+@import '../../../scss/variables.scss';
+@import '../../../scss/mixins/reset.scss';
+@import '../../../scss/mixins/utils.scss';
+@import '../../../scss/mixins/text.scss';
+
+.button {
+  @include reset-button();
+  //   @include focus();
+  position: relative;
+
+  &:disabled {
+    pointer-events: none;
+  }
+
+  //   &:hover {
+  //     background-color: $black-theme;
+  //   }
+}
+
+.icon {
+  @include vertical-center();
+  left: 20px;
+}
+
+// .filled {
+//   background-color: $sub-gray;
+//   color: $main-white;
+// }
+
+.outline {
+  background: none;
+  border: $default;
+  padding: 13px 24px;
+  padding-left: 39px;
+  border-radius: 15px;
+  color: $second-color;
+}
+
+.cart {
+  background: none;
+  border: $default;
+  padding: 40px 24px;
+  border-radius: 15px;
+  color: $second-color;
+}
+// .custom {
+//   background-color: $sub-gray;
+//   border: $search-border;
+//   border-radius: 0;
+//   border-radius: 0 6px 6px 0;
+//   padding: 13px 25px;
+//   transition: background-color 200ms ease;
+// }
+
+// .pagination {
+//   background-color: $black-theme;
+//   border: $search-border;
+//   max-width: 990px;
+//   padding: 13px 25px;
+//   width: 100%;
+
+//   &:hover {
+//     background-color: $black-header;
+//   }
+// }
+
+// .advanced {
+
+// }
+
+.label {
+  @include textRegular-16();
+}

@@ -1,0 +1,27 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+}
+.logo_box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.under_image {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.autorize_box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
