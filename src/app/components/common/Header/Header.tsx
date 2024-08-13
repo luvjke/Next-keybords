@@ -9,7 +9,7 @@ interface Props {}
 
 export const Header: React.FC<Props> = ({}) => {
   return (
-    <header>
+    <header className={styles.header}>
       <div className={styles.container}>
         <div className={styles.logo_box}>
           <Keyboard width={35} height={35} />
@@ -18,8 +18,15 @@ export const Header: React.FC<Props> = ({}) => {
           </div>
         </div>
         <div className={styles.autorize_box}>
-          <Button version={'outline'} label={'Войти'} icon={<User width={16} height={18} />} />
-          <div></div>
+          <Button
+            version={'outline'}
+            label={'Войти'}
+            icon={<User width={16} height={18} />}
+            lversion={'regular'}
+          />
+          <div>
+            <b>520 </b>
+          </div>
         </div>
       </div>
     </header>

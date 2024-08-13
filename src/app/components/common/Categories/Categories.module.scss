@@ -1,0 +1,24 @@
+@import '../../../scss/variables';
+
+.container {
+  display: inline-flex;
+  width: fit-content;
+  gap: 4px;
+  background-color: #f9fafb;
+  padding: 4px;
+  border-radius: 16px;
+}
+.link {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  height: 44px;
+  border-radius: 16px;
+  padding: 0 20px;
+  text-decoration: none;
+}
+.active_link {
+  background-color: $main-white;
+  box-shadow: $categories-box-shadow;
+  color: $main-black;
+}

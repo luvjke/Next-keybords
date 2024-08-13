@@ -1,0 +1,14 @@
+@import '../../../scss/variables.scss';
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0px 20px;
+  height: 52px;
+  border-radius: 16px;
+  cursor: pointer;
+  background-color: #f9fafb;
+}
+.categories {
+  color: $second-color;
+}

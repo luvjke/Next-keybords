@@ -1,0 +1,12 @@
+.title {
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.group_items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-height: 384px;
+  padding-right: 8px;
+  overflow: auto;
+}

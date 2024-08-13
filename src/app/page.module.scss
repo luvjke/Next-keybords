@@ -1,0 +1,53 @@
+@import './scss/variables';
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1280px;
+  color: $main-black;
+  display: flex;
+  margin-top: 10px;
+
+  .title {
+    font-weight: 800;
+  }
+}
+
+.sort {
+  position: sticky;
+  top: 0;
+  background-color: $main-white;
+  padding: 20px 0px;
+  box-shadow: $filters-box-shadow;
+
+  .sort_container {
+    @extend .container;
+    margin-top: 0px;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.keyboards_container {
+  @extend .container;
+  padding-bottom: 56px;
+  margin-top: 36px;
+  .keyboards_wrapper {
+    display: flex;
+    gap: 60px;
+  }
+
+  .filter_box {
+    width: 250px;
+  }
+
+  .keyboards_box {
+    flex: 1 1 0%;
+
+    .keyboards {
+      display: flex;
+      flex-direction: column;
+      gap: 64px;
+    }
+  }
+}

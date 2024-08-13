@@ -36,12 +36,9 @@
   color: $second-color;
 }
 
-.cart {
+.categories {
+  color: $main-black;
   background: none;
-  border: $default;
-  padding: 40px 24px;
-  border-radius: 15px;
-  color: $second-color;
 }
 // .custom {
 //   background-color: $sub-gray;
@@ -67,7 +64,9 @@
 // .advanced {
 
 // }
-
-.label {
+.bold {
+  @include textBold-16();
+}
+.regular {
   @include textRegular-16();
 }
