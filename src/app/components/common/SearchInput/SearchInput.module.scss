@@ -58,14 +58,21 @@
   z-index: 31;
 
   .search_item {
-    padding: 8px 12px;
-    text-decoration: none;
-    color: $main-black;
-    &:hover {
-      background-color: $second-color-dark;
-    }
   }
 }
 .link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  min-width: 100%;
   text-decoration: none;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: $main-black;
+  &:hover {
+    background-color: $second-color-dark;
+  }
+}
+.image {
+  border-radius: 5px;
 }

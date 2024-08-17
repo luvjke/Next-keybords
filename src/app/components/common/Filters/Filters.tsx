@@ -1,9 +1,17 @@
+'use client';
 import React from 'react';
 
 import styles from './Filters.module.scss';
 import { Checkbox } from '../../ui/Checkbox';
 import { CheckboxGroup } from '../../ui/Checkbox/CheckboxGroup';
+import { useFilterComponents } from '../../../../../hooks/useFilterComponents';
 export const Filters = () => {
+  const { components } = useFilterComponents();
+
+  const items = components.map((component) => ({
+    value: String(component.id),
+    text: component.name,
+  }));
   return (
     <div className={styles.filter_box}>
       <h2 className={styles.title}>Фильтрация</h2>
@@ -17,36 +25,8 @@ export const Filters = () => {
       </div>
       <CheckboxGroup
         title={'Комплектующие'}
-        items={[
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Чери', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Чери', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-        ]}
-        defaultItems={[
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Кейкапы', value: '3' },
-          { text: 'Чери', value: '3' },
-        ]}
+        items={items}
+        defaultItems={items.slice(0, 6)}
         limit={6}
       />
     </div>

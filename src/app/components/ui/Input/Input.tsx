@@ -11,6 +11,7 @@ export const Input = ({
   isDisabled,
   onKeyDown,
   onFocus,
+  value,
 }: InputProps) => {
   const InputClassNames = classNames(styles.input, version && styles[version]);
 
@@ -22,6 +23,7 @@ export const Input = ({
       disabled={isDisabled}
       onKeyDown={onKeyDown}
       onFocus={onFocus}
+      value={value}
     />
   );
 };

@@ -5,6 +5,7 @@ export interface CheckboxGroupProps {
   items: CheckboxProps[];
   defaultItems: CheckboxProps[];
   limit?: number;
+
   searchInputPlaceholder?: string;
   onChange?: (values: string[]) => string;
   defaultValue?: string;

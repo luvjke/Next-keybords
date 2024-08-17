@@ -11,6 +11,7 @@ export const CheckboxGroup = ({
   items,
   defaultItems,
   limit = 5,
+
   searchInputPlaceholder = 'Поиск...',
   onChange,
   defaultValue,
@@ -25,6 +26,7 @@ export const CheckboxGroup = ({
   const list = showAll
     ? items.filter((item) => item.text.toLowerCase().includes(seacrhValue.toLowerCase()))
     : defaultItems?.slice(0, limit);
+
   return (
     <div>
       <p className={styles.title}>{title}</p>

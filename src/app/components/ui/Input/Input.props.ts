@@ -1,4 +1,4 @@
-import { ChangeEvent, KeyboardEvent, ReactNode } from 'react';
+import { ChangeEvent, InputHTMLAttributes, KeyboardEvent, ReactNode } from 'react';
 
 export interface InputProps {
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -9,4 +9,10 @@ export interface InputProps {
   isDisabled?: boolean;
   icon?: ReactNode;
   version: 'unfilled' | 'filled' | 'outline' | 'custom' | 'advanced';
+  value?:
+    | InputHTMLAttributes<HTMLInputElement>['value']
+    | string
+    | number
+    | readonly string[]
+    | undefined;
 }
