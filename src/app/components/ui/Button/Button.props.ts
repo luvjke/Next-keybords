@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
+import { ReactNode, SyntheticEvent } from 'react';
 
 export interface ButtonProps {
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: (event: SyntheticEvent) => void;
   version: 'unfilled' | 'filled' | 'outline' | 'custom' | 'pagination' | 'categories';
   lversion: 'regular' | 'bold' | 'medium';
   label: string;

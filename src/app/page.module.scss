@@ -19,7 +19,7 @@
   background-color: $main-white;
   padding: 20px 0px;
   box-shadow: $filters-box-shadow;
-
+  z-index: 2;
   .sort_container {
     @extend .container;
     margin-top: 0px;
@@ -32,23 +32,13 @@
   @extend .container;
   padding-bottom: 56px;
   margin-top: 36px;
-
-  .keyboards_wrapper {
-    display: flex;
-    gap: 60px;
-  }
-
-  .filter_box {
-    width: 250px;
-  }
+  display: flex;
+  gap: 60px;
 
   .keyboards_box {
     flex: 1 1 0%;
-
-    .keyboards {
-      display: flex;
-      flex-direction: column;
-      gap: 64px;
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
   }
 }

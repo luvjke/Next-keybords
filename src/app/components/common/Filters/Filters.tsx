@@ -5,7 +5,7 @@ import { Checkbox } from '../../ui/Checkbox';
 import { CheckboxGroup } from '../../ui/Checkbox/CheckboxGroup';
 export const Filters = () => {
   return (
-    <div>
+    <div className={styles.filter_box}>
       <h2 className={styles.title}>Фильтрация</h2>
       <div className={styles.filter_container}>
         <Checkbox text={'Игровая клавиатура'} value={'1'} />

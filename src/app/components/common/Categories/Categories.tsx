@@ -18,16 +18,17 @@ const categories = [
 export const Categories = () => {
   const activeCategoryId = useCategoryStore((state) => state.activeId);
   return (
-    <div className={styles.container}>
+    <ul className={styles.container}>
       {categories.map(({ name, id }) => (
-        <a
-          key={id}
-          href={`/#${name}`}
-          className={classNames(styles.link, activeCategoryId === id && styles.active_link)}
-        >
-          <Button version={'categories'} label={name} lversion={'bold'} />
-        </a>
+        <li className={styles.li} key={id}>
+          <a
+            href={`/#${name}`}
+            className={classNames(styles.link, activeCategoryId === id && styles.active_link)}
+          >
+            <Button version={'categories'} label={name} lversion={'bold'} />
+          </a>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };

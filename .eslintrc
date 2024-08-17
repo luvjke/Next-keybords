@@ -6,7 +6,7 @@
     "es6": true,
     "es2021": true
   },
-  "extends": ["react-app", "plugin:prettier/recommended", "prettier"],
+  "extends": ["next", "next/core-web-vitals", "plugin:prettier/recommended", "prettier"],
   "plugins": ["react", "import", "@typescript-eslint", "prettier", "react-hooks"],
   "ignorePatterns": ["node_modules"],
   "rules": {
@@ -33,6 +33,13 @@
     "import/order": [
       "error",
       {
+        "pathGroups": [
+          {
+            "pattern": "@/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
         "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
         "newlines-between": "always"
       }

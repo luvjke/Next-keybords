@@ -1,0 +1,71 @@
+@import '../../../scss/variables';
+.container {
+  display: flex;
+  flex: 1 1 0%;
+  border-radius: 16px;
+  justify-content: space-between;
+  height: 44px;
+  position: relative;
+  z-index: 31;
+}
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  height: 20px;
+}
+.focus {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+}
+.search_hidden {
+  position: absolute;
+  background-color: white;
+  border-radius: 12px;
+  padding: 8px 0;
+  top: 56px;
+  box-shadow: $categories-box-shadow;
+
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  visibility: hidden;
+  opacity: 0;
+
+  z-index: 31;
+}
+.search_visible {
+  position: absolute;
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 8px 0;
+  top: 48px;
+  box-shadow: $categories-box-shadow;
+
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+  visibility: visible;
+  opacity: 100;
+
+  z-index: 31;
+
+  .search_item {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: $main-black;
+    &:hover {
+      background-color: $second-color-dark;
+    }
+  }
+}
+.link {
+  text-decoration: none;
+}

@@ -7,16 +7,13 @@ import styles from './Input.module.scss';
 export const Input = ({
   onChange,
   placeholder,
-  icon,
   version,
   isDisabled,
   onKeyDown,
+  onFocus,
 }: InputProps) => {
-  const InputClassNames = classNames(
-    styles.input,
-    version && styles[version],
-    icon && styles.icon_button
-  );
+  const InputClassNames = classNames(styles.input, version && styles[version]);
+
   return (
     <input
       className={InputClassNames}
@@ -24,8 +21,7 @@ export const Input = ({
       onChange={onChange}
       disabled={isDisabled}
       onKeyDown={onKeyDown}
-    >
-      {icon && <span className={styles.icon}>{icon}</span>}
-    </input>
+      onFocus={onFocus}
+    />
   );
 };
