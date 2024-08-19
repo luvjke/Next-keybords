@@ -11,10 +11,11 @@ export const CheckboxGroup = ({
   items,
   defaultItems,
   limit = 5,
-
+  selected,
   searchInputPlaceholder = 'Поиск...',
-  onChange,
+  onClickChange,
   defaultValue,
+  name,
 }: CheckboxGroupProps) => {
   const [showAll, setShowAll] = React.useState(false);
   const [seacrhValue, setSearchValue] = React.useState('');
@@ -25,7 +26,7 @@ export const CheckboxGroup = ({
 
   const list = showAll
     ? items.filter((item) => item.text.toLowerCase().includes(seacrhValue.toLowerCase()))
-    : defaultItems?.slice(0, limit);
+    : (defaultItems || items).slice(0, limit);
 
   return (
     <div>
@@ -33,18 +34,23 @@ export const CheckboxGroup = ({
 
       {showAll && (
         <div>
-          <input onChange={onChangeSearchInput} placeholder={searchInputPlaceholder} />
+          <input
+            onChange={onChangeSearchInput}
+            placeholder={searchInputPlaceholder}
+            className={styles.input_search}
+          />
         </div>
       )}
       <div>
         <div className={styles.group_items}>
-          {list.map((item, index) => (
+          {list?.map((item, index) => (
             <Checkbox
               key={index}
               text={item.text}
               value={item.value}
-              checked={false}
-              onChackedChange={(ids) => console.log(ids)}
+              checked={selected?.has(item.value)}
+              onChackedChange={() => onClickChange?.(item.value)}
+              name={name}
             />
           ))}
         </div>
@@ -52,7 +58,7 @@ export const CheckboxGroup = ({
           <Button
             tag="button"
             version={'unfilled'}
-            lversion={'bold'}
+            lversion={'regular'}
             label={showAll ? 'Скрыть' : 'Показать все'}
             onClick={() => setShowAll(!showAll)}
           />

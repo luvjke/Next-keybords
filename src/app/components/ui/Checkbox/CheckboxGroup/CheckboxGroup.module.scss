@@ -5,8 +5,12 @@
 .group_items {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 13px;
   max-height: 384px;
   padding-right: 8px;
   overflow: auto;
+  margin-bottom: 20px;
+}
+.input_search {
+  margin-bottom: 15px;
 }
