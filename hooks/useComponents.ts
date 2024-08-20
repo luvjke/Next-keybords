@@ -1,19 +1,10 @@
-import React from 'react';
-
 import { Component } from '@prisma/client';
+import React from 'react';
 import { Api } from '../services/api_client';
-import { useSet } from 'react-use';
 
-interface ReturnProps {
-  components: Component[];
-  selectedIds: Set<string>;
-  onToggleId: (id: string) => void;
-}
-
-export const useFilterComponents = (): ReturnProps => {
+export const useComponenets = () => {
   const [components, setComponents] = React.useState<Component[]>([]);
 
-  const [selectedIds, { toggle }] = useSet(new Set<string>([]));
   React.useEffect(() => {
     async function fetchComponents() {
       try {
@@ -26,5 +17,5 @@ export const useFilterComponents = (): ReturnProps => {
 
     fetchComponents();
   }, []);
-  return { components, onToggleId: toggle, selectedIds };
+  return { components };
 };

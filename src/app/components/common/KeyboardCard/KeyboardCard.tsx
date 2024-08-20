@@ -8,7 +8,7 @@ import Image from 'next/image';
 export const KeyboardCard = ({ id, name, price, imageUrl }: KeyboardCardProps) => {
   return (
     <div>
-      <Link href={'/keyboard/1'} className={styles.link}>
+      <Link href={`/product/${id}`} className={styles.link}>
         <div className={styles.container_image}>
           <img className={styles.image} src={imageUrl} alt={name} />
         </div>

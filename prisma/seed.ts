@@ -58,7 +58,7 @@ async function up() {
     data: {
       name: 'HyperX Alloy FPS Pro',
       imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
-      categoryId: 1,
+      categoryId: 3,
       components: {
         connect: components.slice(0, 1),
       },
@@ -80,7 +80,7 @@ async function up() {
       name: 'Dark Project KD87A Optical Gateron Blue TKL',
       imageUrl:
         'https://c.dns-shop.ru/thumb/st4/fit/500/500/856ff9133355752655aae30368c060ae/8b32d12f31df8788eeed9ac1b4b659872bd362224533d167d1b690362a242cd6.jpg.webp',
-      categoryId: 3,
+      categoryId: 4,
       components: {
         connect: components.slice(0, 1),
       },
@@ -100,6 +100,8 @@ async function up() {
       generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 75 }),
       generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 100 }),
       generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 60 }),
+
+      generateProductItem({ productId: 1 }),
     ],
   });
 

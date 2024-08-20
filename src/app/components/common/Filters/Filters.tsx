@@ -3,51 +3,17 @@ import React from 'react';
 
 import styles from './Filters.module.scss';
 import { CheckboxGroup } from '../../ui/Checkbox/CheckboxGroup';
-import { useFilterComponents } from '../../../../../hooks/useFilterComponents';
-import { useSet } from 'react-use';
-import qs from 'qs';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useComponenets, useFilters, useQuryFiltes } from '../../../../../hooks';
 
 export const Filters = () => {
-  const searchParams = useSearchParams() as unknown as Map<keyof QueryFilters, string>;
-  const router = useRouter();
-  const { components, onToggleId, selectedIds } = useFilterComponents();
-
-  const [sizes, { toggle: toogleSizes }] = useSet(
-    new Set<string>(searchParams.has('sizes') ? searchParams.get('sizes')?.split(',') : [])
-  );
-  const [types, { toggle: toogleType }] = useSet(
-    new Set<string>(searchParams.has('types') ? searchParams.get('types')?.split(',') : [])
-  );
-  const [prices, setPrice] = React.useState<FiltersProps>({
-    priceFrom: Number(searchParams.get('priceFrom')) || undefined,
-    priceTo: Number(searchParams.get('priceTo')) || undefined,
-  });
+  const { components } = useComponenets();
+  const filters = useFilters();
+  useQuryFiltes(filters);
 
   const items = components.map((component) => ({
     value: String(component.id),
     text: component.name,
   }));
-
-  const updatePrice = (name: keyof FiltersProps, value: number) => {
-    setPrice({
-      ...prices,
-      [name]: value,
-    });
-  };
-
-  React.useEffect(() => {
-    const filters = {
-      ...prices,
-      types: Array.from(types),
-      sizes: Array.from(sizes),
-      components: Array.from(selectedIds),
-    };
-
-    const queryString = qs.stringify(filters, { arrayFormat: 'comma' });
-
-    router.push(`?${queryString}`, { scroll: false });
-  }, [prices, types, sizes, selectedIds, router]);
 
   return (
     <div className={styles.filter_box}>
@@ -59,8 +25,8 @@ export const Filters = () => {
           { text: 'Да', value: '1' },
           { text: 'Нет', value: '2' },
         ]}
-        onClickChange={toogleType}
-        selected={types}
+        onClickChange={filters.setTypes}
+        selected={filters.types}
         name="type"
       />
       <CheckboxGroup
@@ -79,8 +45,8 @@ export const Filters = () => {
             value: '100',
           },
         ]}
-        onClickChange={toogleSizes}
-        selected={sizes}
+        onClickChange={filters.setSizes}
+        selected={filters.sizes}
         name="sizes"
       />
       <p className={styles.price_title}>
@@ -92,16 +58,16 @@ export const Filters = () => {
           placeholder="0"
           min={0}
           max={1200}
-          value={String(prices.priceFrom || '0')}
-          onChange={(element) => updatePrice('priceFrom', Number(element.target.value))}
+          value={String(filters.prices.priceFrom || '0')}
+          onChange={(element) => filters.setPrices('priceFrom', Number(element.target.value))}
         />
         <input
           type="number"
           placeholder="1000"
           min={500}
           max={1200}
-          value={String(prices.priceTo || '1200')}
-          onChange={(element) => updatePrice('priceTo', Number(element.target.value))}
+          value={String(filters.prices.priceTo || '1200')}
+          onChange={(element) => filters.setPrices('priceTo', Number(element.target.value))}
         />
       </div>
       <CheckboxGroup
@@ -109,8 +75,8 @@ export const Filters = () => {
         items={items}
         defaultItems={items.slice(0, 6)}
         limit={6}
-        onClickChange={onToggleId}
-        selected={selectedIds}
+        onClickChange={filters.setComponents}
+        selected={filters.selectedComponents}
         name="components"
       />
     </div>

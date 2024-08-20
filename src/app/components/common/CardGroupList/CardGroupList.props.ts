@@ -1,5 +1,5 @@
 export interface CardGroupListProps {
   title: string;
-  category: any[];
+  items: any[];
   categoryId: number;
 }

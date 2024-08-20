@@ -5,21 +5,13 @@ import styles from './Categories.module.scss';
 import classNames from 'classnames';
 import { Button } from '../../ui/Button';
 import { useCategoryStore } from '../../../../../store/category';
+import { CategoriesProps } from './Categories.props';
 
-const categories = [
-  { id: 1, name: 'Механическая' },
-  { id: 2, name: 'Мембранная' },
-  { id: 3, name: 'Ножничная' },
-  { id: 4, name: 'Плунжерная' },
-  { id: 5, name: 'Оптомеханическая' },
-  { id: 6, name: 'Оптическая' },
-];
-
-export const Categories = () => {
+export const Categories: React.FC<CategoriesProps> = ({ items }) => {
   const activeCategoryId = useCategoryStore((state) => state.activeId);
   return (
     <ul className={styles.container}>
-      {categories.map(({ name, id }) => (
+      {items.map(({ name, id }) => (
         <li className={styles.li} key={id}>
           <a
             href={`/#${name}`}
