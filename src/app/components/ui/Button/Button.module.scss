@@ -44,14 +44,13 @@
   background: none;
 }
 // .custom {
-//   background-color: $sub-gray;
-//   border: $search-border;
-//   border-radius: 0;
-//   border-radius: 0 6px 6px 0;
-//   padding: 13px 25px;
-//   transition: background-color 200ms ease;
+
 // }
 
+.disabled {
+  opacity: 50;
+  pointer-events: none;
+}
 // .pagination {
 //   background-color: $black-theme;
 //   border: $search-border;

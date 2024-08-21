@@ -1,11 +1,11 @@
 import styles from './page.module.scss';
 
-import { Categories } from './components/common/Categories';
-import { Popup } from './components/ui/Popup';
-import { Filters } from './components/common/Filters';
+import { Categories } from '../components/common/Categories';
+import { Popup } from '../components/ui/Popup';
+import { Filters } from '../components/common/Filters';
 
-import { CardGroupList } from './components/common/CardGroupList';
-import { prisma } from '../../prisma/prisma_client';
+import { CardGroupList } from '../components/common/CardGroupList';
+import { prisma } from '../../../prisma/prisma_client';
 
 export default async function Home() {
   const categories = await prisma.category.findMany({

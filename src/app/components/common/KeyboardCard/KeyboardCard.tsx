@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './KeyboardCard.module.scss';
 import { KeyboardCardProps } from './KeyboardCard.props';
 import { Button } from '../../ui/Button';
-import Image from 'next/image';
+
 export const KeyboardCard = ({ id, name, price, imageUrl }: KeyboardCardProps) => {
   return (
     <div>

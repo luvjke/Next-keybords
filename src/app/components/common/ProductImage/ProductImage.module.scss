@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex: 1 1 0%;
+  position: relative;
+}
+
+.sizes {
+  position: relative;
+  left: 8px;
+  top: 8px;
+  transition: all;
+  z-index: 10;
+  transition-duration: 300;
+}
+.size-60 {
+  width: 300px;
+  height: 300px;
+}
+
+.size-75 {
+  width: 400px;
+  height: 400px;
+}
+.size-100 {
+  width: 500px;
+  height: 500px;
+}

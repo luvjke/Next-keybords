@@ -15,7 +15,7 @@ export const Button = ({
   tag = 'button',
   href,
 }: ButtonProps) => {
-  const buttonClassNames = classNames(styles.button, version && styles[version]);
+  const buttonClassNames = classNames(styles.button, version && styles[version], styles.disabled);
   const labelClassNames = classNames(styles.label, lversion && styles[lversion]);
   return tag === 'button' ? (
     <button className={buttonClassNames} onClick={onClick} disabled={disabled}>

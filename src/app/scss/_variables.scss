@@ -21,10 +21,18 @@ $font-weight-bold: 700;
 
 // SHADOWS
 
-$basic-box-shadow: 0 0 0 1px transparent, 0 0 0 2px #223c50;
-$categories-box-shadow: 0 4px 6px -1px #0000001a, 0 2px 4px -1px #0000000f;
-$filters-box-shadow: 0 10px 15px -3px #0000001a, 0 4px 6px -2px #0000000d;
-
+$basic-box-shadow:
+  0 0 0 1px transparent,
+  0 0 0 2px #223c50;
+$categories-box-shadow:
+  0 4px 6px -1px #0000001a,
+  0 2px 4px -1px #0000000f;
+$filters-box-shadow:
+  0 10px 15px -3px #0000001a,
+  0 4px 6px -2px #0000000d;
+$bg-white-shadow:
+  0 1px 3px 0 #0000001a,
+  0 1px 2px 0 #0000000f;
 //  BORDER
 $default: 1px solid $second-color;
 
