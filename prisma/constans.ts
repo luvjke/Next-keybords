@@ -76,4 +76,44 @@ export const products = [
     imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
     categoryId: 1,
   },
+  {
+    name: '3',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
+  {
+    name: '4',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
+  {
+    name: '5',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
+  {
+    name: '6',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
+  {
+    name: '7',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
+  {
+    name: '8',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
+  {
+    name: '89',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
+  {
+    name: '10',
+    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+    categoryId: 1,
+  },
 ];

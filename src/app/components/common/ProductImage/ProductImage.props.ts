@@ -1,4 +1,4 @@
 interface ProductImageProps {
   imageUrl: string;
-  size: number;
+  size: 60 | 75 | 100;
 }

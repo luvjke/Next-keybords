@@ -1,0 +1,18 @@
+@import '../../../scss/variables';
+.form {
+  display: flex;
+  flex: 1 1 0%;
+}
+.information_container {
+  width: 490px;
+  background: #f7f6f5;
+  padding: 28px;
+
+  .title {
+    font-weight: bolder;
+    margin-bottom: 4px;
+  }
+  .details {
+    color: $main-gray;
+  }
+}
