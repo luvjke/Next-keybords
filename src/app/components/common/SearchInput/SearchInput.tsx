@@ -8,7 +8,7 @@ import { Product } from '@prisma/client';
 import { useClickAway, useDebounce } from 'react-use';
 
 import { Input } from '../../ui/Input';
-import { Api } from '../../../../../services/api_client';
+import { Api } from '../../../../../shared/services/api_client';
 
 export const SearchInput = () => {
   const [searchQuery, setSearchQuery] = React.useState('');

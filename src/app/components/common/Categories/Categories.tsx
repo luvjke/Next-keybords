@@ -4,7 +4,7 @@ import React from 'react';
 import styles from './Categories.module.scss';
 import classNames from 'classnames';
 import { Button } from '../../ui/Button';
-import { useCategoryStore } from '../../../../../store/category';
+import { useCategoryStore } from '../../../../../shared/store/category';
 import { CategoriesProps } from './Categories.props';
 
 export const Categories: React.FC<CategoriesProps> = ({ items }) => {

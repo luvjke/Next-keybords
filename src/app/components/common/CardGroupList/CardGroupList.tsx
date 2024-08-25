@@ -5,7 +5,7 @@ import { useIntersection } from 'react-use';
 import styles from './CardGroupList.module.scss';
 import { CardGroupListProps } from './CardGroupList.props';
 import { KeyboardCard } from '../KeyboardCard';
-import { useCategoryStore } from '../../../../../store/category';
+import { useCategoryStore } from '../../../../../shared/store/category';
 
 export const CardGroupList = ({ title, items, categoryId }: CardGroupListProps) => {
   const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);

@@ -46,7 +46,14 @@
 // .custom {
 
 // }
+.modal {
+  margin-top: 20px;
+  padding: 13px;
+  width: 100%;
 
+  border-radius: 18px;
+  background-color: $main-gray;
+}
 .disabled {
   opacity: 50;
   pointer-events: none;

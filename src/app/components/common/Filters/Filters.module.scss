@@ -1,11 +1,17 @@
+@import '../../../scss/variables';
 .filter_box {
   max-width: 250px;
+  height: 100%;
+  background-color: #f9fafb;
+  padding: 5px 0px;
+  border-radius: 12px;
 }
 
 .title {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
   margin-top: 0;
   font-weight: 700;
+  line-height: 22px;
 }
 .filter_container {
   display: flex;
@@ -13,7 +19,9 @@
   gap: 16px;
   margin-bottom: 50px;
 }
-
+.filter {
+  padding-bottom: 30px;
+}
 .price_filter {
   display: flex;
   gap: 12px;

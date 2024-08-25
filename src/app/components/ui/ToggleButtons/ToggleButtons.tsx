@@ -8,7 +8,7 @@ import classNames from 'classnames';
 export const ToggleButtons: React.FC<GroupToggleProps> = ({ items, onClick, selectedValue }) => {
   return (
     <div className={styles.container}>
-      {items.map((item) => (
+      {items?.map((item) => (
         <button
           key={item.name}
           className={classNames(styles.button, {

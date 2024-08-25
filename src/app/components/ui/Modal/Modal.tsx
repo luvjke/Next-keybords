@@ -7,12 +7,13 @@ import { ModalProps } from './Modal.props';
 import classNames from 'classnames';
 import { useRouter } from 'next/navigation';
 
-export const Modal: React.FC<ModalProps> = ({
+export const Modal: React.FC<ModalProps & { children: React.ReactNode }> = ({
   active,
   setActive,
   children,
-}: PropsWithChildren<ModalProps>) => {
+}) => {
   const router = useRouter();
+
   return (
     <div
       className={classNames(styles.modal, active && styles.modal_active)}

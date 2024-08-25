@@ -1,5 +1,5 @@
-import { Product } from '@prisma/client';
+import { IProduct } from '../../../../../@types/prisma';
 
 export interface ProductModal {
-  product: Product;
+  product: IProduct;
 }

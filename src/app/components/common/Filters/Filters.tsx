@@ -3,7 +3,7 @@ import React from 'react';
 
 import styles from './Filters.module.scss';
 import { CheckboxGroup } from '../../ui/Checkbox/CheckboxGroup';
-import { useComponenets, useFilters, useQuryFiltes } from '../../../../../hooks';
+import { useComponenets, useFilters, useQuryFiltes } from '../../../../../shared/hooks';
 
 export const Filters = () => {
   const { components } = useComponenets();
@@ -20,7 +20,7 @@ export const Filters = () => {
       <h2 className={styles.title}>Фильтрация</h2>
 
       <CheckboxGroup
-        title={'Игровая клавиатура'}
+        title={'Игровая клавиатура:'}
         items={[
           { text: 'Да', value: '1' },
           { text: 'Нет', value: '2' },
@@ -30,7 +30,7 @@ export const Filters = () => {
         name="type"
       />
       <CheckboxGroup
-        title={'Размер'}
+        title={'Размер:'}
         items={[
           {
             text: '60%',
@@ -49,10 +49,10 @@ export const Filters = () => {
         selected={filters.sizes}
         name="sizes"
       />
-      <p className={styles.price_title}>
+      <p className={styles.title}>
         <b>Цена от и до:</b>
       </p>
-      <div className={styles.price_filter}>
+      <div className={styles.filter}>
         <input
           type="number"
           placeholder="0"
@@ -71,7 +71,7 @@ export const Filters = () => {
         />
       </div>
       <CheckboxGroup
-        title={'Комплектующие'}
+        title={'Комплектующие:'}
         items={items}
         defaultItems={items.slice(0, 6)}
         limit={6}

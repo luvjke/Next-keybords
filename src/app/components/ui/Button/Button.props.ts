@@ -2,7 +2,7 @@ import { ReactNode, SyntheticEvent } from 'react';
 
 export interface ButtonProps {
   onClick?: (event: SyntheticEvent) => void;
-  version: 'unfilled' | 'filled' | 'outline' | 'custom' | 'pagination' | 'categories';
+  version: 'unfilled' | 'filled' | 'outline' | 'custom' | 'pagination' | 'categories' | 'modal';
   lversion: 'regular' | 'bold' | 'medium';
   label: string;
   icon?: ReactNode;

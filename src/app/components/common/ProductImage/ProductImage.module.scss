@@ -1,7 +1,14 @@
+.box {
+}
 .container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  min-width: 600px;
   flex: 1 1 0%;
   position: relative;
+  margin-right: 10px;
 }
 
 .sizes {

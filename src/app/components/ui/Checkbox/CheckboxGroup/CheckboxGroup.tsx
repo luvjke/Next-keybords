@@ -29,7 +29,7 @@ export const CheckboxGroup = ({
     : (defaultItems || items).slice(0, limit);
 
   return (
-    <div>
+    <div className={styles.container}>
       <p className={styles.title}>{title}</p>
 
       {showAll && (
@@ -57,10 +57,11 @@ export const CheckboxGroup = ({
         {items.length > limit && (
           <Button
             tag="button"
-            version={'unfilled'}
+            version={'filled'}
             lversion={'regular'}
             label={showAll ? 'Скрыть' : 'Показать все'}
             onClick={() => setShowAll(!showAll)}
+            disabled={false}
           />
         )}
       </div>

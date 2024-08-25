@@ -1,18 +1,18 @@
 import React from 'react';
-import { KeyboardFormProps } from './ChooseKeyboardForm.props';
+import { ProductFormProps } from './ChooseProductForm.props';
 
-import styles from './ChooseKeyboardForm.module.scss';
+import styles from './ChooseProductForm.module.scss';
 import { ProductImage } from '../ProductImage';
 import { Button } from '../../ui/Button';
-export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
+export const ChooseProductForm: React.FC<ProductFormProps> = ({
   name,
-  items,
+
   imageUrl,
   onClickAdd,
-  components,
 }) => {
   const textDetails = '60%,игровая';
   const totalPrice = 3000;
+
   return (
     <div className={styles.form}>
       <ProductImage imageUrl={imageUrl} size={60} />

@@ -1,0 +1,31 @@
+@import '../../../../scss/variables';
+.form {
+  display: flex;
+  flex: 1 1 0%;
+}
+.information_container {
+  min-width: 490px;
+  background: #f7f6f5;
+  padding: 28px;
+  border-radius: 12px;
+  .title {
+    font-weight: bolder;
+    margin: 4px 0;
+  }
+  .details {
+    margin: 4px 0;
+    color: $main-gray;
+  }
+}
+
+.toogles {
+  margin: 10px 0;
+}
+.components {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-height: 420px;
+  gap: 8px;
+  border-radius: 6px;
+  overflow: auto;
+}
