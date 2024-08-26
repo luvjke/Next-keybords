@@ -33,7 +33,7 @@ export const Header: React.FC<Props> = ({}) => {
             lversion={'regular'}
           />
           <div>
-            <b>520 </b>
+            <Button version={'cart'} lversion={'regular'} label={''} tag="cart_button" />
           </div>
         </div>
       </div>

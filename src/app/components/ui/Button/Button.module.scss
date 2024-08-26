@@ -22,11 +22,6 @@
   left: 20px;
 }
 
-// .filled {
-//   background-color: $sub-gray;
-//   color: $main-white;
-// }
-
 .outline {
   background: none;
   border: $default;
@@ -43,9 +38,7 @@
 .unfilled {
   background: none;
 }
-// .custom {
 
-// }
 .modal {
   margin-top: 20px;
   padding: 13px;
@@ -54,25 +47,58 @@
   border-radius: 18px;
   background-color: $main-gray;
 }
+.cart {
+  position: relative;
+  display: flex;
+  padding: 14px 24px;
+  border-radius: 15px;
+  &:hover {
+    .cart_span {
+      opacity: 1;
+    }
+    .cart_div {
+      opacity: 0;
+    }
+    .arrow {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+}
+.cart_span {
+  height: 25px;
+  width: 1px;
+  background: $main-black;
+  opacity: 0.7;
+  margin: 0 12px;
+}
+.cart_div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.arrow {
+  width: 20px;
+  position: absolute;
+  right: 20px;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+  transform: translateX(0.5rem);
+  opacity: 0;
+}
+
 .disabled {
   opacity: 50;
   pointer-events: none;
 }
-// .pagination {
-//   background-color: $black-theme;
-//   border: $search-border;
-//   max-width: 990px;
-//   padding: 13px 25px;
-//   width: 100%;
 
-//   &:hover {
-//     background-color: $black-header;
-//   }
-// }
-
-// .advanced {
-
-// }
 .bold {
   @include textBold-16();
 }

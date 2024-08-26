@@ -5,7 +5,7 @@ export interface GroupToggleProps {
   selectedValue?: Variant['value'];
 }
 
-type Variant = {
+export type Variant = {
   disabled?: boolean;
   name: string;
   value: string;

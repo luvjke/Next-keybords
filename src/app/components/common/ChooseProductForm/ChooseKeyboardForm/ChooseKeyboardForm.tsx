@@ -9,14 +9,13 @@ import { KeyboardFormProps } from './ChooseKeyboardForm.props';
 import { ToggleButtons } from '@/app/components/ui/ToggleButtons';
 import {
   KeyboardSize,
-  keyboardSizes,
   KeyboardType,
   keyboardTypes,
   mapType,
 } from '../../../../../../shared/constans/keyboards';
 import { Component } from '../../Component';
-import { useSet } from 'react-use';
 import { calcKeyboardsPrice } from '../../../../../../shared/utils/calcKeyboardsPrice';
+import { useKeyboardOptions } from '../../../../../../shared/hooks';
 
 export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
   name,
@@ -25,31 +24,11 @@ export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
   onClickAdd,
   components,
 }) => {
-  const [size, setSize] = React.useState<KeyboardSize>(60);
-  const [type, setType] = React.useState<KeyboardType>(1);
+  const { size, type, availableKeybordSize, selectedComponents, addComponent, setType, setSize } =
+    useKeyboardOptions(items);
 
-  const [selectedComponents, { toggle: addComponent }] = useSet(new Set<number>([]));
   const textDetails = `${size}%, клавиатура ${mapType[type]}`;
-
   const totalPrice = calcKeyboardsPrice(type, size, items, components, selectedComponents);
-
-  const availableKeybord = items.filter((item) => item.keyboardType === type);
-  const availableKeybordSize = keyboardSizes.map((item) => ({
-    name: item.name,
-    value: item.value,
-    disabled: !availableKeybord.some((keybord) => Number(keybord.size) === Number(item.value)),
-  }));
-
-  React.useEffect(() => {
-    const disabledSize = availableKeybordSize?.find(
-      (item) => Number(item.value) === size && !item.disabled
-    );
-    const availableSize = availableKeybordSize?.find((item) => !item.disabled);
-
-    if (!disabledSize && availableSize) {
-      setSize(Number(availableSize.value) as KeyboardSize);
-    }
-  }, [availableKeybordSize, size, type]);
 
   const handleClickAdd = () => {
     onClickAdd?.();
@@ -94,7 +73,7 @@ export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
           onClick={handleClickAdd}
           version={'modal'}
           lversion={'bold'}
-          label={`Добавить в корзину за ${totalPrice}`}
+          label={`Добавить в корзину за ${totalPrice} ₽`}
         />
       </div>
     </div>
