@@ -17,4 +17,6 @@ export interface ButtonProps {
   disabled?: boolean;
   tag?: 'link' | 'button' | 'cart_button';
   href?: any;
+  count?: number;
+  price?: number;
 }

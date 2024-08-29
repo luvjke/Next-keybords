@@ -6,6 +6,7 @@ import { Keyboard, ShoppingCart, User } from 'lucide-react';
 import { Button } from '../../ui/Button';
 import Link from 'next/link';
 import { SearchInput } from '../SearchInput';
+import { CartDrawer } from '../CartDrawer';
 
 interface Props {}
 
@@ -33,7 +34,9 @@ export const Header: React.FC<Props> = ({}) => {
             lversion={'regular'}
           />
           <div>
-            <Button version={'cart'} lversion={'regular'} label={''} tag="cart_button" />
+            <CartDrawer>
+              <Button version={'cart'} lversion={'regular'} label={''} tag="cart_button" />
+            </CartDrawer>
           </div>
         </div>
       </div>
