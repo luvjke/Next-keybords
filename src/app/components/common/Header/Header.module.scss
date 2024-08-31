@@ -25,7 +25,12 @@
   font-weight: 900;
   text-transform: uppercase;
 }
-
+.user_icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 4px;
+}
 .autorize_box {
   display: flex;
   align-items: center;

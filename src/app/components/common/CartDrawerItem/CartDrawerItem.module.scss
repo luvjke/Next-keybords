@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  background-color: white;
+  padding: 20px;
+  gap: 24px;
+}
+
+.info_container {
+  flex: 1 1 0%;
+}
+
+.info_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.info_price {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.price {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+}
+.hr {
+  margin: 12px 0;
+  opacity: 50%;
+}
+
+.image {
+  width: 60px;
+  height: 60px;
+}

@@ -1,0 +1,12 @@
+@import '../../../../scss/mixins/utils.scss';
+@import '../../../../scss/variables';
+.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.icon {
+  @include absolute-center();
+  color: $main-black;
+}

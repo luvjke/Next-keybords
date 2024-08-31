@@ -30,7 +30,7 @@ export const Header: React.FC<Props> = ({}) => {
           <Button
             version={'outline'}
             label={'Войти'}
-            icon={<User width={16} height={18} />}
+            icon={<User width={16} height={18} className={styles.user_icon} />}
             lversion={'regular'}
           />
           <div>

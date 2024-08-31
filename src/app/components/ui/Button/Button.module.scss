@@ -19,7 +19,6 @@
 
 .icon {
   @include vertical-center();
-  left: 20px;
 }
 
 .outline {
@@ -37,6 +36,10 @@
 }
 .unfilled {
   background: none;
+  border-radius: 16px;
+  padding: 15px;
+  border: 1px solid $main-black;
+  border-radius: 10px;
 }
 
 .modal {
@@ -95,7 +98,7 @@
 }
 
 .disabled {
-  opacity: 50;
+  opacity: 50%;
   pointer-events: none;
 }
 
