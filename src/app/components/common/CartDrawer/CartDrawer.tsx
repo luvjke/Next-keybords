@@ -10,18 +10,28 @@ import { CartDrawerItem } from '../CartDrawerItem';
 import { getCartItemDetails } from '../../../../../shared/utils/getCartItemDetails';
 import { useCartStore } from '../../../../../shared/store/cart';
 import { KeyboardSize, KeyboardType } from '../../../../../shared/constans/keyboards';
+
 export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ children }) => {
+  const [totalAmount, items, fetchCartItems, updateItemQuantity, removeCartItem] = useCartStore(
+    (state) => [
+      state.totalAmount,
+      state.items,
+      state.fetchCartItems,
+      state.updateItemQuantity,
+      state.removeCartItem,
+    ]
+  );
+
   const [content, setContent] = React.useState(false);
 
   const ref = React.useRef(null);
 
   useClickAway(ref, () => setContent(false));
 
-  const [totalAmount, fetchCartItems, items] = useCartStore((state) => [
-    state.totalAmount,
-    state.fetchCartItems,
-    state.items,
-  ]);
+  const onClickCountButton = (id: number, quantity: number, type: 'plus' | 'minus') => {
+    const newQuantity = type === 'plus' ? quantity + 1 : quantity - 1;
+    updateItemQuantity(id, newQuantity);
+  };
 
   React.useEffect(() => {
     fetchCartItems();
@@ -40,28 +50,24 @@ export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ childre
           </h2>
         </div>
         <ul className={styles.items}>
-          {items.map(
-            (item) => (
-              console.log(item.keyboardSize),
-              console.log(item.keyboardType),
-              (
-                <li className={styles.item} key={item.id}>
-                  <CartDrawerItem
-                    id={item.id}
-                    imageUrl={item.imageUrl}
-                    details={getCartItemDetails(
-                      item.components,
-                      item.keyboardType as KeyboardType,
-                      item.keyboardSize as KeyboardSize
-                    )}
-                    name={item.name}
-                    price={item.price}
-                    quantity={item.quantity}
-                  />
-                </li>
-              )
-            )
-          )}
+          {items.map((item) => (
+            <li className={styles.item} key={item.id}>
+              <CartDrawerItem
+                id={item.id}
+                imageUrl={item.imageUrl}
+                details={getCartItemDetails(
+                  item.components,
+                  item.keyboardType as KeyboardType,
+                  item.keyboardSize as KeyboardSize
+                )}
+                name={item.name}
+                price={item.price}
+                quantity={item.quantity}
+                onClickCountButton={(type) => onClickCountButton(item.id, item.quantity, type)}
+                onClickRemove={() => removeCartItem(item.id)}
+              />
+            </li>
+          ))}
         </ul>
         <div className={styles.sheet_footer}>
           <div className={styles.footer_content}>
