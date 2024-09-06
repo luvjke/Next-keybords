@@ -20,10 +20,10 @@ export const Filters = () => {
       <h2 className={styles.title}>Фильтрация</h2>
 
       <CheckboxGroup
-        title={'Игровая клавиатура:'}
+        title={'Беспроводная клавиатура:'}
         items={[
-          { text: 'Да', value: '1' },
           { text: 'Нет', value: '2' },
+          { text: 'Да', value: '1' },
         ]}
         onClickChange={filters.setTypes}
         selected={filters.types}
@@ -57,7 +57,7 @@ export const Filters = () => {
           type="number"
           placeholder="0"
           min={0}
-          max={1200}
+          max={14999}
           value={String(filters.prices.priceFrom || '0')}
           onChange={(element) => filters.setPrices('priceFrom', Number(element.target.value))}
         />
@@ -65,8 +65,8 @@ export const Filters = () => {
           type="number"
           placeholder="1000"
           min={500}
-          max={1200}
-          value={String(filters.prices.priceTo || '1200')}
+          max={15000}
+          value={String(filters.prices.priceTo || '15000')}
           onChange={(element) => filters.setPrices('priceTo', Number(element.target.value))}
         />
       </div>

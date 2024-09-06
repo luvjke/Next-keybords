@@ -1,6 +1,7 @@
 export interface ProductFormProps {
   imageUrl: string;
   name: string;
-
-  onClickAdd?: VoidFunction;
+  price: number;
+  onSubmit?: VoidFunction;
+  loading?: boolean;
 }

@@ -1,11 +1,11 @@
 @import '../../../scss/variables';
 
 .container {
-  max-width: 1280px;
   color: $main-black;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   margin: 10px 0;
 }
 .box {

@@ -21,18 +21,27 @@ export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
   name,
   items,
   imageUrl,
-  onClickAdd,
+  onSumbit,
   components,
 }) => {
-  const { size, type, availableKeybordSize, selectedComponents, addComponent, setType, setSize } =
-    useKeyboardOptions(items);
+  const {
+    size,
+    type,
+    availableKeybordSize,
+    selectedComponents,
+    currentItemId,
+    addComponent,
+    setType,
+    setSize,
+  } = useKeyboardOptions(items);
 
   const textDetails = `${size}%, клавиатура ${mapType[type]}`;
   const totalPrice = calcKeyboardsPrice(type, size, items, components, selectedComponents);
 
   const handleClickAdd = () => {
-    onClickAdd?.();
-    console.log({ size, type, components: selectedComponents });
+    if (currentItemId) {
+      onSumbit(currentItemId, Array.from(selectedComponents));
+    }
   };
 
   return (

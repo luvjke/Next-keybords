@@ -6,18 +6,11 @@ import { Filters } from '../components/common/Filters';
 
 import { CardGroupList } from '../components/common/CardGroupList';
 import { prisma } from '../../../prisma/prisma_client';
+import { Suspense } from 'react';
+import { findKeyboards, GetSearchParams } from '../../../shared/utils/findKeyboards';
 
-export default async function Home() {
-  const categories = await prisma.category.findMany({
-    include: {
-      products: {
-        include: {
-          items: true,
-          components: true,
-        },
-      },
-    },
-  });
+export default async function Home({ searchParams }: { searchParams: GetSearchParams }) {
+  const categories = await findKeyboards(searchParams);
   return (
     <>
       <div className={styles.container}>
@@ -35,7 +28,9 @@ export default async function Home() {
         </div>
       </div>
       <div className={styles.keyboards_container}>
-        <Filters />
+        <Suspense>
+          <Filters />
+        </Suspense>
         <div className={styles.keyboards_box}>
           {categories.map(
             (category) =>

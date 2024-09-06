@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 
 import styles from './Header.module.scss';
@@ -7,10 +8,16 @@ import { Button } from '../../ui/Button';
 import Link from 'next/link';
 import { SearchInput } from '../SearchInput';
 import { CartDrawer } from '../CartDrawer';
+import { useCartStore } from '../../../../../shared/store/cart';
 
 interface Props {}
 
 export const Header: React.FC<Props> = ({}) => {
+  const [totalAmount, items, loading] = useCartStore((state) => [
+    state.totalAmount,
+    state.items,
+    state.loading,
+  ]);
   return (
     <header className={styles.header}>
       <div className={styles.container}>
@@ -35,7 +42,14 @@ export const Header: React.FC<Props> = ({}) => {
           />
           <div>
             <CartDrawer>
-              <Button version={'cart'} lversion={'regular'} label={''} tag="cart_button" />
+              <Button
+                version={'cart'}
+                lversion={'regular'}
+                label={''}
+                tag="cart_button"
+                price={totalAmount}
+                count={items.length}
+              />
             </CartDrawer>
           </div>
         </div>

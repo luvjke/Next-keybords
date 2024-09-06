@@ -6,5 +6,6 @@ export interface KeyboardFormProps {
   name: string;
   components: Component[];
   items: ProductItem[];
-  onClickAdd?: VoidFunction;
+  onSumbit: (itemId: number, components: number[]) => void;
+  loading?: boolean;
 }

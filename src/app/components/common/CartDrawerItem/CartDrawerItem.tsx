@@ -5,6 +5,7 @@ import { CartItemProps } from './CartDrawerItem.props';
 import { DrawerItemInfo } from './DrawerItemInfo/DrawerItemInfo';
 import { CountButtons } from './CountButtons';
 import { Trash2Icon } from 'lucide-react';
+import classNames from 'classnames';
 
 export const CartDrawerItem: React.FC<CartItemProps> = ({
   imageUrl,
@@ -17,7 +18,7 @@ export const CartDrawerItem: React.FC<CartItemProps> = ({
   onClickRemove,
 }) => {
   return (
-    <div className={styles.container}>
+    <div className={classNames(styles.container, disabled && styles.disabled)}>
       <img className={styles.image} src={imageUrl} />
       <div className={styles.info_container}>
         <DrawerItemInfo name={name} details={details} />

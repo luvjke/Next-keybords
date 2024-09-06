@@ -10,6 +10,7 @@ interface ReturnProps {
   type: KeyboardType;
   availableKeybordSize: Variant[];
   selectedComponents: Set<number>;
+  currentItemId?: number;
   setSize: (size: KeyboardSize) => void;
   setType: (type: KeyboardType) => void;
   addComponent: (id: number) => void;
@@ -21,6 +22,8 @@ export const useKeyboardOptions = (items: ProductItem[]): ReturnProps => {
   const [selectedComponents, { toggle: addComponent }] = useSet(new Set<number>([]));
 
   const availableKeybordSize = getAvailableKeyboards(type, items);
+
+  const currentItemId = items.find((item) => item.keyboardType === type && item.size === size)?.id;
 
   React.useEffect(() => {
     const disabledSize = availableKeybordSize?.find(
@@ -38,6 +41,7 @@ export const useKeyboardOptions = (items: ProductItem[]): ReturnProps => {
     type,
     selectedComponents,
     availableKeybordSize,
+    currentItemId,
     setSize,
     setType,
     addComponent,

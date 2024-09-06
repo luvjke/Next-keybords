@@ -7,6 +7,7 @@ export type CartStateItem = {
   name: string;
   imageUrl: string;
   price: number;
+  disabled?: boolean;
   keyboardSize?: number | null;
   keyboardType?: number | null;
   components: Array<{ name: string; price: number }>;
@@ -25,10 +26,11 @@ export const getCartDetails = (data: CartDTO): ReturnProps => {
     price: calcCartItemPrice(item),
     keyboardSize: item.productItem.size,
     keyboardType: item.productItem.keyboardType,
+    disabled: false,
     components: item.components.map((component) => ({
       name: component.name,
       price: component.price,
-    })),
+    })) as CartStateItem[],
   }));
   return {
     items,

@@ -17,8 +17,8 @@ export const Modal: React.FC<ModalProps & { children: React.ReactNode }> = ({
   return (
     <div
       className={classNames(styles.modal, active && styles.modal_active)}
-      onClick={(e) => {
-        e.stopPropagation();
+      onClick={(element) => {
+        element.stopPropagation();
         setActive?.(false);
         router.back();
       }}

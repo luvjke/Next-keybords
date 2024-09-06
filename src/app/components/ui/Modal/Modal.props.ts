@@ -1,5 +1,4 @@
 import { Product } from '@prisma/client';
-import { ReactChild } from 'react';
 
 export interface ModalProps {
   active?: boolean;
