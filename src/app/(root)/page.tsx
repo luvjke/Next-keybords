@@ -5,7 +5,6 @@ import { Popup } from '../components/ui/Popup';
 import { Filters } from '../components/common/Filters';
 
 import { CardGroupList } from '../components/common/CardGroupList';
-import { prisma } from '../../../prisma/prisma_client';
 import { Suspense } from 'react';
 import { findKeyboards, GetSearchParams } from '../../../shared/utils/findKeyboards';
 

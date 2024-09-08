@@ -1,0 +1,17 @@
+.price_details {
+  display: flex;
+  margin: 16px 0;
+}
+.price_title {
+  display: flex;
+  flex: 1 1 0%;
+}
+.shtrix {
+  flex: 1 1 0%;
+  border-bottom-width: 1px;
+  border-bottom-style: dashed;
+  border-color: rgb(229 229 229);
+  position: relative;
+  top: -4px;
+  margin: 0 8px;
+}

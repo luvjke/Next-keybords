@@ -3,16 +3,18 @@ import React from 'react';
 
 import styles from './Header.module.scss';
 
-import { Keyboard, ShoppingCart, User } from 'lucide-react';
+import { Keyboard, User } from 'lucide-react';
 import { Button } from '../../ui/Button';
 import Link from 'next/link';
 import { SearchInput } from '../SearchInput';
 import { CartDrawer } from '../CartDrawer';
 import { useCartStore } from '../../../../../shared/store/cart';
 
-interface Props {}
+interface Props {
+  hasSearch?: boolean;
+}
 
-export const Header: React.FC<Props> = ({}) => {
+export const Header: React.FC<Props> = ({ hasSearch = true }) => {
   const [totalAmount, items, loading] = useCartStore((state) => [
     state.totalAmount,
     state.items,
@@ -30,9 +32,11 @@ export const Header: React.FC<Props> = ({}) => {
           </div>
         </Link>
 
-        <div className={styles.search_input}>
-          <SearchInput />
-        </div>
+        {hasSearch && (
+          <div className={styles.search_input}>
+            <SearchInput />
+          </div>
+        )}
         <div className={styles.autorize_box}>
           <Button
             version={'outline'}

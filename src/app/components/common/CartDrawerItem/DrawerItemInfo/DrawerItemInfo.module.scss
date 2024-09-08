@@ -10,3 +10,9 @@
   flex: 1 1 0%;
   line-height: 22px;
 }
+.details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  margin: 0;
+}

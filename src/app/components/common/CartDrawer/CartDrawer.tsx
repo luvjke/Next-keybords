@@ -9,19 +9,12 @@ import classNames from 'classnames';
 import { useClickAway } from 'react-use';
 import { CartDrawerItem } from '../CartDrawerItem';
 import { getCartItemDetails } from '../../../../../shared/utils/getCartItemDetails';
-import { useCartStore } from '../../../../../shared/store/cart';
+
 import { KeyboardSize, KeyboardType } from '../../../../../shared/constans/keyboards';
+import { useCart } from '../../../../../shared/hooks';
 
 export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ children }) => {
-  const [totalAmount, items, fetchCartItems, updateItemQuantity, removeCartItem] = useCartStore(
-    (state) => [
-      state.totalAmount,
-      state.items,
-      state.fetchCartItems,
-      state.updateItemQuantity,
-      state.removeCartItem,
-    ]
-  );
+  const { totalAmount, updateItemQuantity, items, removeCartItem } = useCart();
 
   const [content, setContent] = React.useState(false);
 
@@ -33,10 +26,6 @@ export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ childre
     const newQuantity = type === 'plus' ? quantity + 1 : quantity - 1;
     updateItemQuantity(id, newQuantity);
   };
-
-  React.useEffect(() => {
-    fetchCartItems();
-  }, []);
 
   return (
     <div ref={ref} className={styles.sheet}>
@@ -92,7 +81,7 @@ export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ childre
                   <span>Итого</span>
                   <span>{totalAmount} р</span>
                 </div>
-                <Link href={`/cart`}>
+                <Link href={`/checkout`}>
                   <Button version={'unfilled'} lversion={'bold'} label={'Оформить заказ'} />
                 </Link>
               </div>
