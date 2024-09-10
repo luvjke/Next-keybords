@@ -4,7 +4,7 @@
     "node": true,
     "commonjs": true,
     "es6": true,
-    "es2021": true
+    "es2021": true,
   },
   "extends": ["next", "next/core-web-vitals", "plugin:prettier/recommended", "prettier"],
   "plugins": ["react", "import", "@typescript-eslint", "prettier", "react-hooks"],
@@ -19,14 +19,14 @@
     "react/no-unknown-property": [
       2,
       {
-        "ignore": ["custom-element", "global", "jsx"]
-      }
+        "ignore": ["custom-element", "global", "jsx"],
+      },
     ],
     "prettier/prettier": [
       "error",
       {
-        "endOfLine": "auto"
-      }
+        "endOfLine": "auto",
+      },
     ],
     "require-await": "error",
     "import/no-duplicates": "error",
@@ -37,12 +37,12 @@
           {
             "pattern": "@/**",
             "group": "internal",
-            "position": "after"
-          }
+            "position": "after",
+          },
         ],
         "groups": [["builtin", "external"], "internal", ["parent", "sibling", "index"]],
-        "newlines-between": "always"
-      }
-    ]
-  }
+        "newlines-between": "always",
+      },
+    ],
+  },
 }

@@ -1,39 +1,43 @@
 @import '../../../scss/variables';
+
 .container_image {
+  background-color: $second-white;
+  border-radius: 8px;
   display: flex;
+  height: 260px;
   justify-content: center;
   padding: 24px;
-  border-radius: 8px;
-  height: 260px;
-  background-color: $second-white;
+
   .image {
-    width: 215px;
     height: 215px;
+    width: 215px;
   }
 }
 
 .title {
+  color: $main-black;
+  font-weight: 700;
   margin-bottom: 2px;
   margin-top: 8px;
-  font-weight: 700;
-  color: $main-black;
 }
+
 .description {
-  font-size: 17px;
   color: $main-gray;
+  font-size: 17px;
 }
 
 .container_under {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-top: 16px;
 
   .price {
-    font-size: 20px;
     color: $main-black;
+    font-size: 20px;
   }
 }
+
 .link {
   text-decoration: none;
 }

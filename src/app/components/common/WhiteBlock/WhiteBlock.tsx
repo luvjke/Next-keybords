@@ -10,7 +10,7 @@ export const WhiteBlock: React.FC<React.PropsWithChildren<WhiteBlockProps>> = ({
   children,
 }) => {
   return (
-    <div className={classNames(styles.container, addClassName && styles.addClassName)}>
+    <div className={classNames(styles.container, addClassName && styles.classname)}>
       {title && (
         <div className={styles.box}>
           <h1 className={styles.title}>{title}</h1>

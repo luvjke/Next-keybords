@@ -25,12 +25,14 @@
     "qs": "^6.13.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.53.0",
     "react-use": "^17.5.1",
     "sass": "^1.77.8",
     "ts-node": "^10.9.2",
     "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/qs": "^6.9.15",
@@ -43,12 +45,14 @@
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react-hooks": "^4.6.2",
     "prettier": "^3.3.3",
-    "stylelint": "^16.8.2",
+    "react-dadata": "^2.23.3",
+    "stylelint": "^15.11.0",
     "stylelint-config-prettier": "^9.0.5",
-    "stylelint-config-standard": "^36.0.1",
-    "stylelint-config-standard-scss": "^13.1.0",
-    "stylelint-order": "^6.0.4",
-    "stylelint-scss": "^6.5.0",
-    "typescript": "^5"
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^11.1.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-scss": "^5.3.1",
+    "typescript": "^5",
+    "zod": "^3.23.8"
   }
 }

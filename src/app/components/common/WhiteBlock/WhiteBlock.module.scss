@@ -4,15 +4,17 @@
 }
 
 .box {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
   padding: 20px 28px;
 }
+
 .children {
   padding: 16px 20px;
 }
-.addClassName {
+
+.classname {
   padding: 24px;
   position: sticky;
   top: 16px;

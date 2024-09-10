@@ -23,7 +23,7 @@
     "number-max-precision": 2,
     "order/properties-alphabetical-order": true,
     "property-no-vendor-prefix": [true, { "ignoreProperties": "appearance" }],
-    "scss/at-import-partial-extension": "always",
+    "scss/at-import-partial-extension": null,
     "scss/at-mixin-argumentless-call-parentheses": "always",
     "scss/at-mixin-pattern": "^[a-z][A-Za-z0-9-]*[a-z0-9]$",
     "scss/selector-no-union-class-name": true,

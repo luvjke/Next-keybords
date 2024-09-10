@@ -1,33 +1,37 @@
 @import '../../../scss/variables.scss';
 @import '../../../scss/mixins/reset.scss';
+
 .container {
-  display: flex;
-  justify-content: space-between;
   background-color: #f3f3f7;
   border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
   padding: 4px;
   user-select: none;
 }
+
 .button {
   @include reset-button();
-  display: flex;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  height: 30px;
-  flex: 1 1 0%;
   border-radius: 24px;
+  cursor: pointer;
+  display: flex;
+  flex: 1 1 0%;
+  height: 30px;
+  justify-content: center;
   padding: 0 20px;
-  transition-property: all;
   transition-duration: 400ms;
+  transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .active {
   background: $main-white;
   box-shadow: $bg-white-shadow;
 }
+
 .disabled {
-  opacity: 50%;
-  pointer-events: none;
   color: $second-color;
+  opacity: 0.5;
+  pointer-events: none;
 }

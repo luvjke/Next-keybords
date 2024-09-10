@@ -3,42 +3,49 @@
 .header {
   border-bottom: solid 1px #ededed;
 }
+
 .container {
+  align-items: center;
+  color: $main-black;
+  display: flex;
+  justify-content: space-between;
   margin-left: auto;
   margin-right: auto;
   max-width: 1280px;
-  color: $main-black;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding: 32px;
 }
+
 .logo_box {
-  display: flex;
   align-items: center;
-  gap: 16px;
   color: $main-black;
+  display: flex;
+  gap: 16px;
 }
+
 .under_image {
   font-size: 24px;
-  line-height: 32px;
   font-weight: 900;
+  line-height: 32px;
   text-transform: uppercase;
 }
+
 .user_icon {
   position: absolute;
+  right: 4px;
   top: 50%;
   transform: translateY(-50%);
-  right: 4px;
 }
+
 .autorize_box {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 12px;
 }
+
 .link {
   text-decoration: none;
 }
+
 .search_input {
   flex: 1 1 0%;
   margin: 0 40px;

@@ -1,18 +1,19 @@
 .info_box {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 }
 
 .title {
+  flex: 1 1 0%;
   font-size: 16px;
   font-weight: 700;
-  flex: 1 1 0%;
   line-height: 22px;
 }
+
 .details {
+  margin: 0;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: wrap;
-  margin: 0;
 }

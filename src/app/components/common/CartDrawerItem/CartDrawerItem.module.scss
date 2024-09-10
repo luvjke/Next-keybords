@@ -1,38 +1,43 @@
 .container {
-  display: flex;
   background-color: white;
-  padding: 20px;
+  display: flex;
   gap: 24px;
+  padding: 20px;
 }
+
 .disabled {
-  opacity: 50%;
+  opacity: 0.5;
   pointer-events: none;
 }
+
 .info_container {
   flex: 1 1 0%;
 }
 
 .info_footer {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 }
+
 .info_price {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 12px;
 }
+
 .price {
   font-size: 16px;
   font-weight: 700;
   line-height: 22px;
 }
+
 .hr {
   margin: 12px 0;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 .image {
-  width: 60px;
   height: 60px;
+  width: 60px;
 }

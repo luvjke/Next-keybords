@@ -1,40 +1,44 @@
 @import '../../scss/variables';
+
 .container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1280px;
   color: $main-black;
   display: flex;
   flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 10px;
+  max-width: 1280px;
 }
+
 .title {
-  font-weight: 800;
-  margin-bottom: 8px;
   font-size: 36px;
+  font-weight: 800;
   margin-bottom: 32px;
 }
+
 .wrapper {
   display: flex;
   gap: 20px;
 }
+
 .content {
   display: flex;
   flex: 1 1 0%;
-  margin-bottom: 80px;
   flex-direction: column;
   gap: 40px;
+  margin-bottom: 80px;
 }
 
-.personalData {
+.personal_data {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .sidebar {
   width: 450px;
 }
+
 .address {
   display: flex;
   flex-direction: column;
@@ -45,4 +49,12 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+}
+
+.ul_list {
+  padding: 0;
+
+  li {
+    list-style: none;
+  }
 }

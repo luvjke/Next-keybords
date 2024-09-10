@@ -1,14 +1,16 @@
 @import '../../../scss/variables.scss';
+
 .container {
-  display: inline-flex;
   align-items: center;
-  gap: 4px;
-  padding: 0px 20px;
-  height: 52px;
+  background-color: #f9fafb;
   border-radius: 16px;
   cursor: pointer;
-  background-color: #f9fafb;
+  display: inline-flex;
+  gap: 4px;
+  height: 52px;
+  padding: 0 20px;
 }
+
 .categories {
   color: $second-color;
 }

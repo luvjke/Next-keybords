@@ -5,6 +5,7 @@
 
 .button {
   @include reset-button();
+
   //   @include focus();
   position: relative;
 
@@ -24,87 +25,93 @@
 .outline {
   background: none;
   border: $default;
-  padding: 13px 24px;
-  padding-left: 39px;
   border-radius: 15px;
   color: $second-color;
+  padding: 13px 24px;
+  padding-left: 39px;
 }
 
 .categories {
-  color: $main-black;
   background: none;
+  color: $main-black;
 }
+
 .unfilled {
   background: none;
-  border-radius: 16px;
-  padding: 15px;
   border: 1px solid $main-black;
   border-radius: 10px;
+  padding: 15px;
 }
 
 .modal {
+  background-color: $main-gray;
+  border-radius: 18px;
   margin-top: 20px;
   padding: 13px;
   width: 100%;
-
-  border-radius: 18px;
-  background-color: $main-gray;
 }
+
 .cart {
-  position: relative;
+  border-radius: 15px;
   display: flex;
   padding: 14px 24px;
-  border-radius: 15px;
+  position: relative;
+
   &:hover {
     .cart_span {
       opacity: 1;
     }
+
     .cart_div {
       opacity: 0;
     }
+
     .arrow {
       opacity: 1;
-      transform: translateX(0px);
+      transform: translateX(0);
     }
   }
 }
+
 .cart_span {
-  height: 25px;
-  width: 1px;
   background: $main-black;
-  opacity: 0.7;
+  height: 25px;
   margin: 0 12px;
+  opacity: 0.7;
+  width: 1px;
 }
+
 .cart_div {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 4px;
+  transition-duration: 300ms;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
     transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
 }
 
 .arrow {
-  width: 20px;
+  opacity: 0;
   position: absolute;
   right: 20px;
+  transform: translateX(0.5rem);
+  transition-duration: 300ms;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
     transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 300ms;
-  transform: translateX(0.5rem);
-  opacity: 0;
+  width: 20px;
 }
 
 .disabled {
-  opacity: 50%;
+  opacity: 0.5;
   pointer-events: none;
 }
 
 .bold {
   @include textBold-16();
 }
+
 .regular {
   @include textRegular-16();
 }

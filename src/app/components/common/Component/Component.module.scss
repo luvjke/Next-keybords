@@ -1,33 +1,36 @@
 @import '../../../scss/variables';
 
 .container {
-  display: flex;
   align-items: center;
-  flex-direction: column;
-  padding: 2px;
-  margin: 2px;
-
-  width: 128px;
-  border-radius: 6px;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
   background: $main-white;
+  border-radius: 6px;
   box-shadow: $categories-box-shadow;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
+  padding: 2px;
+  position: relative;
+  text-align: center;
+  width: 128px;
 }
+
 .container_active {
   box-shadow: $basic-box-shadow;
 }
+
 .icon {
-  position: absolute;
-  top: 8px;
-  right: 8px;
   color: $main-black;
+  position: absolute;
+  right: 8px;
+  top: 8px;
 }
+
 .title {
   font-size: 12px;
   line-height: 16px;
 }
+
 .price {
   font-weight: 700;
 }
