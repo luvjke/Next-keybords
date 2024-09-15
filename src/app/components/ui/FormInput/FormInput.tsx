@@ -36,7 +36,12 @@ export const FormInput: React.FC<FormInputProps> = ({
         {!textArea ? (
           <input className={styles.input} {...props} {...register(name)} />
         ) : (
-          <textarea rows={5} placeholder="Комментарий к заказу" className={styles.textarea} />
+          <textarea
+            rows={5}
+            placeholder="Комментарий к заказу"
+            className={styles.textarea}
+            {...register(name)}
+          />
         )}
         <button onClick={onClickClear} className={styles.button}>
           {value && <X width={20} height={20} />}

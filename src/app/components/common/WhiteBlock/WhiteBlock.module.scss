@@ -19,3 +19,8 @@
   position: sticky;
   top: 16px;
 }
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

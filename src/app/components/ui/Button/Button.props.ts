@@ -1,6 +1,6 @@
 import { ReactNode, SyntheticEvent } from 'react';
 
-export interface ButtonProps {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onClick?: (event: SyntheticEvent) => void;
   version:
     | 'unfilled'

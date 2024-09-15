@@ -4,18 +4,22 @@ import qs from 'qs';
 import React from 'react';
 
 export const useQuryFiltes = (filters: Filters) => {
+  const isMounted = React.useRef(false);
   const router = useRouter();
 
   React.useEffect(() => {
-    const params = {
-      ...filters.prices,
-      types: Array.from(filters.types),
-      sizes: Array.from(filters.sizes),
-      components: Array.from(filters.selectedComponents),
-    };
+    if (isMounted.current) {
+      const params = {
+        ...filters.prices,
+        types: Array.from(filters.types),
+        sizes: Array.from(filters.sizes),
+        components: Array.from(filters.selectedComponents),
+      };
 
-    const queryString = qs.stringify(params, { arrayFormat: 'comma' });
+      const queryString = qs.stringify(params, { arrayFormat: 'comma' });
 
-    router.push(`?${queryString}`, { scroll: false });
-  }, [filters, router]);
+      router.push(`?${queryString}`, { scroll: false });
+    }
+    isMounted.current = true;
+  }, [filters]);
 };

@@ -16,6 +16,7 @@ import {
 } from '../../../../shared/utils/checkoutFormSchema';
 import { AdressInput } from '@/app/components/ui/AdressInput';
 import { Skeleton } from '@/app/components/common/Skeleton';
+import { createOrder } from '@/app/actions';
 const VAT = 15;
 const DELEVERY_PRICE = 250;
 
@@ -34,8 +35,16 @@ export default function CheckoutPage() {
     },
   });
 
-  const onSubmit = (data: CheckoutFormValues) => {
-    console.log(data);
+  const onSubmit = async (data: CheckoutFormValues) => {
+    try {
+      const url = await createOrder(data);
+
+      if (url) {
+        location.href = url;
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   const onClickCountButton = (id: number, quantity: number, type: 'plus' | 'minus') => {
     const newQuantity = type === 'plus' ? quantity + 1 : quantity - 1;
@@ -54,30 +63,34 @@ export default function CheckoutPage() {
             <div className={styles.content}>
               <WhiteBlock title="1.Корзина">
                 <ul className={styles.ul_list}>
-                  {items.map((item) => (
-                    <li key={item.id}>
-                      <CheckoutItem
-                        id={item.id}
-                        imageUrl={item.imageUrl}
-                        details={getCartItemDetails(
-                          item.components,
-                          item.keyboardType as KeyboardType,
-                          item.keyboardSize as KeyboardSize
-                        )}
-                        disabled={item.disabled}
-                        name={item.name}
-                        price={item.price}
-                        quantity={item.quantity}
-                        onClickCountButton={(type) =>
-                          onClickCountButton(item.id, item.quantity, type)
-                        }
-                        onClickRemove={() => removeCartItem(item.id)}
-                      />
-                    </li>
-                  ))}
+                  {loading
+                    ? [...Array(3)].map((_, index) => (
+                        <Skeleton key={index} version={'product_cart'} />
+                      ))
+                    : items.map((item) => (
+                        <li key={item.id}>
+                          <CheckoutItem
+                            id={item.id}
+                            imageUrl={item.imageUrl}
+                            details={getCartItemDetails(
+                              item.components,
+                              item.keyboardType as KeyboardType,
+                              item.keyboardSize as KeyboardSize
+                            )}
+                            disabled={item.disabled}
+                            name={item.name}
+                            price={item.price}
+                            quantity={item.quantity}
+                            onClickCountButton={(type) =>
+                              onClickCountButton(item.id, item.quantity, type)
+                            }
+                            onClickRemove={() => removeCartItem(item.id)}
+                          />
+                        </li>
+                      ))}
                 </ul>
               </WhiteBlock>
-              <WhiteBlock title="2.Персональные данные">
+              <WhiteBlock title="2.Персональные данные" disabled={loading}>
                 <div className={styles.personal_data}>
                   <FormInput name="firstName" placeholder="Имя" />
                   <FormInput name="lastName" placeholder="Фамилия" />
@@ -85,7 +98,7 @@ export default function CheckoutPage() {
                   <FormInput name="phone" placeholder="Телефон" />
                 </div>
               </WhiteBlock>
-              <WhiteBlock title="3.Адрес доставки">
+              <WhiteBlock title="3.Адрес доставки" disabled={loading}>
                 <Controller
                   control={form.control}
                   name="address"
@@ -105,12 +118,21 @@ export default function CheckoutPage() {
               <WhiteBlock addClassName={true}>
                 <div className={styles.total}>
                   <span>Итого:</span>
-                  {loading ? <Skeleton /> : <span>{totalPrice} P</span>}
+                  {loading ? <Skeleton version="price" /> : <span>{totalPrice} ₽</span>}
                 </div>
-                <CheckoutDetails title={'Стоимость корзины:'} price={totalAmount} />
-                <CheckoutDetails title={'Налоги:'} price={vatPrice} />
-                <CheckoutDetails title={'Доставка:'} price={DELEVERY_PRICE} />
-                <Button version={'unfilled'} lversion={'bold'} label={'Перейти к оплате'} />
+                <CheckoutDetails
+                  title={'Стоимость корзины:'}
+                  price={loading ? <Skeleton version="price_item" /> : totalAmount}
+                />
+                <CheckoutDetails
+                  title={'Налоги:'}
+                  price={loading ? <Skeleton version="price_item" /> : vatPrice}
+                />
+                <CheckoutDetails
+                  title={'Доставка:'}
+                  price={loading ? <Skeleton version="price_item" /> : DELEVERY_PRICE}
+                />
+                <Button version={'unfilled'} lversion={'bold'} label={'Оформить заказ'} />
               </WhiteBlock>
             </div>
           </div>

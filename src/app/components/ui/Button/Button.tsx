@@ -17,6 +17,7 @@ export const Button = ({
   href,
   price,
   count,
+  ...props
 }: ButtonProps) => {
   const buttonClassNames = classNames(
     styles.button,
@@ -25,12 +26,12 @@ export const Button = ({
   );
   const labelClassNames = classNames(styles.label, lversion && styles[lversion]);
   return tag === 'button' ? (
-    <button className={buttonClassNames} onClick={onClick} disabled={disabled}>
+    <button className={buttonClassNames} onClick={onClick} disabled={disabled} {...props}>
       {icon && <span className={styles.icon}>{icon}</span>}
       <span className={labelClassNames}>{label}</span>
     </button>
   ) : tag === 'cart_button' ? (
-    <button className={buttonClassNames} onClick={onClick} disabled={disabled}>
+    <button className={buttonClassNames} onClick={onClick} disabled={disabled} {...props}>
       <b>{price || 0} ₽</b>
       <span className={styles.cart_span} />
       <div className={styles.cart_div}>

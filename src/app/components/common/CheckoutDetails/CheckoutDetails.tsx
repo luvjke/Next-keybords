@@ -10,7 +10,7 @@ export const CheckoutDetails: React.FC<CheckoutDetailsProps> = ({ title, price }
         <div className={styles.shtrix} />
       </span>
 
-      <span>{price}p</span>
+      <span>{price}</span>
     </div>
   );
 };

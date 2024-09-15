@@ -20,6 +20,7 @@ export const Header: React.FC<Props> = ({ hasSearch = true }) => {
     state.items,
     state.loading,
   ]);
+  // Сделать тост успешной оплаты
   return (
     <header className={styles.header}>
       <div className={styles.container}>

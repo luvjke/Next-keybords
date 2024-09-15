@@ -1,4 +1,4 @@
 export interface CheckoutDetailsProps {
   title?: string;
-  price?: number;
+  price?: React.ReactNode;
 }

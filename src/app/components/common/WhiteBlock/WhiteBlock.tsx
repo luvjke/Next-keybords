@@ -7,10 +7,17 @@ export const WhiteBlock: React.FC<React.PropsWithChildren<WhiteBlockProps>> = ({
   title,
   endAdorment,
   addClassName,
+  disabled,
   children,
 }) => {
   return (
-    <div className={classNames(styles.container, addClassName && styles.classname)}>
+    <div
+      className={classNames(
+        styles.container,
+        addClassName && styles.classname,
+        disabled && styles.disabled
+      )}
+    >
       {title && (
         <div className={styles.box}>
           <h1 className={styles.title}>{title}</h1>

@@ -12,6 +12,7 @@ export const CountButtons: React.FC<CountButtonsProps> = ({ value, onClick }) =>
         version={'unfilled'}
         lversion={'bold'}
         label={''}
+        type="button"
         disabled={value === 1}
         onClick={() => onClick?.('minus')}
         icon={<Minus height={16} width={16} className={styles.icon} />}
@@ -23,6 +24,7 @@ export const CountButtons: React.FC<CountButtonsProps> = ({ value, onClick }) =>
         version={'unfilled'}
         lversion={'bold'}
         label={''}
+        type="button"
         onClick={() => onClick?.('plus')}
         icon={<Plus height={16} width={16} className={styles.icon} />}
       />
