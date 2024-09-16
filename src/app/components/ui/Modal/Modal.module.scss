@@ -1,6 +1,8 @@
+@import '../../../scss/variables.scss';
+
 .modal {
   align-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: $modal-background;
   display: flex;
   height: 100vh;
   justify-content: center;
@@ -13,18 +15,30 @@
   z-index: 33;
 }
 
+.modal_product {
+}
+
+.modal_auth {
+}
+
 .modal_active {
   opacity: 1;
   pointer-events: all;
 }
 
 .modal_content {
-  background-color: white;
+  background-color: $main-white;
   border-radius: 12px;
+  transform: scale(0, 5);
+}
+
+.modal_content_product {
   max-width: 1060px;
   min-height: 500px;
-  transform: scale(0, 5);
-  transition: 0.4s all;
+}
+
+.modal_content_auth {
+  max-width: 1060px;
 }
 
 .modal_content_active {

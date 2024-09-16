@@ -11,22 +11,30 @@ export const Modal: React.FC<ModalProps & { children: React.ReactNode }> = ({
   active,
   setActive,
   children,
+  version,
+  version_content,
 }) => {
   const router = useRouter();
-
+  const ModalClassNames = classNames(
+    styles.modal,
+    version && styles[version],
+    active && styles.modal_active
+  );
+  const ModalContentClassNames = classNames(
+    styles.modal_content,
+    version_content && styles[version_content],
+    active && styles.modal_content_active
+  );
   return (
     <div
-      className={classNames(styles.modal, active && styles.modal_active)}
+      className={ModalClassNames}
       onClick={(element) => {
         element.stopPropagation();
         setActive?.(false);
         router.back();
       }}
     >
-      <div
-        className={classNames(styles.modal_content, active && styles.modal_content_active)}
-        onClick={(element) => element.stopPropagation()}
-      >
+      <div className={ModalContentClassNames} onClick={(element) => element.stopPropagation()}>
         {children}
       </div>
     </div>

@@ -11,7 +11,13 @@ export const ChooseProductModal = ({ product }: ProductModal) => {
   const router = useRouter();
 
   return (
-    <Modal active={modalActive} setActive={setModalActive} product={product}>
+    <Modal
+      active={modalActive}
+      setActive={setModalActive}
+      product={product}
+      version={'modal_product'}
+      version_content={'modal_content_product'}
+    >
       <ProductForm product={product} onSubmit={() => router.back()} />
     </Modal>
   );

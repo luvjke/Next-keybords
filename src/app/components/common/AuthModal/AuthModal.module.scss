@@ -1,0 +1,18 @@
+.auth_content {
+  width: 450px;
+}
+
+.login_container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+
+  .login_header {
+    margin-right: 8px;
+  }
+
+  .login_title {
+    font-size: 26px;
+    font-weight: 800;
+  }
+}

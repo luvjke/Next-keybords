@@ -9,12 +9,18 @@ import Link from 'next/link';
 import { SearchInput } from '../SearchInput';
 import { CartDrawer } from '../CartDrawer';
 import { useCartStore } from '../../../../../shared/store/cart';
+import { useSession, signIn } from 'next-auth/react';
+import { AuthModal } from '../AuthModal';
+import { useRouter } from 'next/navigation';
 
 interface Props {
   hasSearch?: boolean;
 }
 
 export const Header: React.FC<Props> = ({ hasSearch = true }) => {
+  const { data: session } = useSession();
+  const router = useRouter();
+  const [openAuthModal, setOpenAuthModal] = React.useState(false);
   const [totalAmount, items, loading] = useCartStore((state) => [
     state.totalAmount,
     state.items,
@@ -24,7 +30,7 @@ export const Header: React.FC<Props> = ({ hasSearch = true }) => {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Link className={styles.link} href={'/'}>
+        <Link className={styles.link} href={`/`}>
           <div className={styles.logo_box}>
             <Keyboard width={35} height={35} />
             <div>
@@ -39,12 +45,24 @@ export const Header: React.FC<Props> = ({ hasSearch = true }) => {
           </div>
         )}
         <div className={styles.autorize_box}>
-          <Button
-            version={'outline'}
-            label={'Войти'}
-            icon={<User width={16} height={18} className={styles.user_icon} />}
-            lversion={'regular'}
-          />
+          <AuthModal open={openAuthModal} onClose={() => setOpenAuthModal(false)} />
+          {!session ? (
+            <Button
+              onClick={() => setOpenAuthModal(true)}
+              version={'outline'}
+              label={'Войти'}
+              icon={<User width={16} height={18} className={styles.user_icon} />}
+              lversion={'regular'}
+            />
+          ) : (
+            <Button
+              version={'unfilled'}
+              lversion={'regular'}
+              label={'Профиль'}
+              tag="link"
+              href={'/profile'}
+            />
+          )}
           <div>
             <CartDrawer>
               <Button

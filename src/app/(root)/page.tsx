@@ -1,5 +1,3 @@
-import styles from './page.module.scss';
-
 import { Categories } from '../components/common/Categories';
 import { Popup } from '../components/ui/Popup';
 import { Filters } from '../components/common/Filters';
@@ -7,6 +5,7 @@ import { Filters } from '../components/common/Filters';
 import { CardGroupList } from '../components/common/CardGroupList';
 import { Suspense } from 'react';
 import { findKeyboards, GetSearchParams } from '../../../shared/utils/findKeyboards';
+import styles from './page.module.scss';
 
 export default async function Home({ searchParams }: { searchParams: GetSearchParams }) {
   const categories = await findKeyboards(searchParams);
@@ -18,12 +17,7 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
       <div className={styles.sort}>
         <div className={styles.sort_container}>
           <Categories items={categories.filter((category) => category.products.length > 0)} />
-          <Popup
-            active={false}
-            setActive={function (): void {
-              throw new Error('Function not implemented.');
-            }}
-          />
+          <Popup active={false} setActive={() => 123} />
         </div>
       </div>
       <div className={styles.keyboards_container}>
