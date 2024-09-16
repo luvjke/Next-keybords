@@ -9,6 +9,7 @@ import { Github } from 'lucide-react';
 import { AuthModalProps } from './AuthModal.props';
 import { useClickAway } from 'react-use';
 import { LoginForm } from './forms/LoginForm';
+import { RegisterForm } from './forms/RegisterForm';
 export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
   const [type, setType] = React.useState<'login' | 'register'>('login');
   const onSwitchType = () => {
@@ -26,7 +27,7 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
       version_content={'modal_content_auth'}
     >
       <div className={styles.auth_content} ref={ref}>
-        {type === 'login' ? <LoginForm onClose={onClose} /> : <h1>Регистрация</h1>}
+        {type === 'login' ? <LoginForm onClose={onClose} /> : <RegisterForm onClose={onClose} />}
         <hr />
         <div>
           <Button

@@ -17,23 +17,40 @@ import {
 import { AdressInput } from '@/app/components/ui/AdressInput';
 import { Skeleton } from '@/app/components/common/Skeleton';
 import { createOrder } from '@/app/actions';
+import { useSession } from 'next-auth/react';
+import React from 'react';
+import { Api } from '../../../../shared/services/api_client';
 const VAT = 15;
 const DELEVERY_PRICE = 250;
 
 export default function CheckoutPage() {
   const { totalAmount, updateItemQuantity, items, removeCartItem, loading } = useCart();
-
+  const { data: session } = useSession();
   const form = useForm<CheckoutFormValues>({
     resolver: zodResolver(checkoutFormSchema),
     defaultValues: {
       email: '',
-      firstName: '',
+      firstName: session?.user?.name || '',
       lastName: '',
       phone: '',
       address: '',
       comment: '',
     },
   });
+
+  React.useEffect(() => {
+    async function fetchUserInfo() {
+      const data = await Api.auth.getMe();
+      const [firstName, lastName] = data.fullName.split(' ');
+
+      form.setValue('firstName', firstName);
+      form.setValue('lastName', lastName);
+      form.setValue('email', data.email);
+    }
+    if (session) {
+      fetchUserInfo();
+    }
+  }, [session]);
 
   const onSubmit = async (data: CheckoutFormValues) => {
     try {

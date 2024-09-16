@@ -1,5 +1,6 @@
 import { AuthOptions } from 'next-auth';
 import GitHubProvider from 'next-auth/providers/github';
+import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from 'next-auth/providers/credentials';
 
 import { compare, hashSync } from 'bcrypt';
@@ -10,6 +11,10 @@ import { prisma } from '../../prisma/prisma_client';
 
 export const authOptions: AuthOptions = {
   providers: [
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID || '',
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
+    }),
     GitHubProvider({
       clientId: process.env.GITHUB_ID || '',
       clientSecret: process.env.GITHUB_SECRET || '',
@@ -127,7 +132,7 @@ export const authOptions: AuthOptions = {
       }
       return token;
     },
-    session({ session, token }) {
+    session({ session, token }: any) {
       if (session?.user) {
         session.user.id = token.id;
         session.user.role = token.role;
