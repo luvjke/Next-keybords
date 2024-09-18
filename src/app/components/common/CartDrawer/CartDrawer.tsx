@@ -12,6 +12,7 @@ import { getCartItemDetails } from '../../../../../shared/utils/getCartItemDetai
 
 import { KeyboardSize, KeyboardType } from '../../../../../shared/constans/keyboards';
 import { useCart } from '../../../../../shared/hooks';
+import { CheckoutDetails } from '../CheckoutDetails';
 
 export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ children }) => {
   const { totalAmount, updateItemQuantity, items, removeCartItem } = useCart();
@@ -78,12 +79,15 @@ export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ childre
               </ul>
               <div className={styles.sheet_footer}>
                 <div className={styles.footer_content}>
-                  <span>Итого</span>
-                  <span>{totalAmount} р</span>
+                  <CheckoutDetails title="Итого:" price={totalAmount} />
+                  <Button
+                    version={'link'}
+                    lversion={'bold'}
+                    label={'Оформить заказ'}
+                    tag="link"
+                    href={`/checkout`}
+                  />
                 </div>
-                <Link href={`/checkout`}>
-                  <Button version={'unfilled'} lversion={'bold'} label={'Оформить заказ'} />
-                </Link>
               </div>
             </>
           )}

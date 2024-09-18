@@ -4,7 +4,7 @@ export const categories = [
   { name: 'Оптомеханическая' },
   { name: 'Ножничная' },
   { name: 'Плунжерная' },
-  { name: 'Оптическая' },
+  { name: 'Клавиши' },
 ];
 
 export const components = [
@@ -72,8 +72,22 @@ export const components = [
 
 export const products = [
   {
-    name: 'Test',
-    imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
-    categoryId: 4,
+    name: 'Клавиша ZOMO «Кошачья лапка»',
+    imageUrl:
+      'https://static.insales-cdn.com/images/products/1/432/274301360/large_лапка_кошка.jpg',
+    categoryId: 6,
+  },
+  {
+    name: 'Клавиша Wuzenkey «Moai Ancient Stone»',
+    imageUrl:
+      'https://static.insales-cdn.com/images/products/1/249/771301625/large_wuse_keycap_moai_ancient_stone_1__1_.webp',
+    categoryId: 6,
+  },
+  {
+    name: 'Клавиша Wuzenkey «Octopus Ember»',
+    imageUrl:
+      'https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webp',
+    // https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webpPRhttps://static.insales-cdn.com/images/products/1/1172/751740052/large_wuse_octopus_ember_3.webpPRhttps://static.insales-cdn.com/images/products/1/1173/751740053/large_wuse_octopus_ember_2.webpPR'
+    categoryId: 6,
   },
 ];

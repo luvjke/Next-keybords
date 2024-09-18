@@ -3,22 +3,20 @@ import { prisma } from './prisma_client';
 import { categories, components, products } from './constans';
 import { Prisma } from '@prisma/client';
 
-const randomDecimalNumber = (min: number, max: number) => {
-  return Math.floor(Math.random() * (max - min) * 10 + min * 10) / 10;
-};
-
 const generateProductItem = ({
   productId,
   keyboardType,
   size,
+  price,
 }: {
   productId: number;
   keyboardType?: number;
   size?: number;
+  price: number;
 }) => {
   return {
     productId,
-    price: randomDecimalNumber(2000, 13000),
+    price,
     keyboardType,
     size,
   } as Prisma.ProductItemUncheckedCreateInput;
@@ -89,19 +87,21 @@ async function up() {
 
   await prisma.productItem.createMany({
     data: [
-      generateProductItem({ productId: Keyboard1.id, keyboardType: 1, size: 75 }),
-      generateProductItem({ productId: Keyboard1.id, keyboardType: 2, size: 100 }),
-      generateProductItem({ productId: Keyboard1.id, keyboardType: 1, size: 60 }),
+      generateProductItem({ productId: Keyboard1.id, keyboardType: 1, size: 75, price: 7499 }),
+      generateProductItem({ productId: Keyboard1.id, keyboardType: 2, size: 100, price: 7999 }),
+      generateProductItem({ productId: Keyboard1.id, keyboardType: 1, size: 60, price: 8999 }),
 
-      generateProductItem({ productId: Keyboard2.id, keyboardType: 2, size: 75 }),
-      generateProductItem({ productId: Keyboard2.id, keyboardType: 1, size: 100 }),
-      generateProductItem({ productId: Keyboard2.id, keyboardType: 1, size: 60 }),
+      generateProductItem({ productId: Keyboard2.id, keyboardType: 2, size: 75, price: 9999 }),
+      generateProductItem({ productId: Keyboard2.id, keyboardType: 1, size: 100, price: 9999 }),
+      generateProductItem({ productId: Keyboard2.id, keyboardType: 1, size: 60, price: 10999 }),
 
-      generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 75 }),
-      generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 100 }),
-      generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 60 }),
+      generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 75, price: 5999 }),
+      generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 100, price: 5499 }),
+      generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 60, price: 6599 }),
 
-      generateProductItem({ productId: 1 }),
+      generateProductItem({ productId: 1, price: 1590 }),
+      generateProductItem({ productId: 2, price: 2490 }),
+      generateProductItem({ productId: 3, price: 2490 }),
     ],
   });
 

@@ -5,6 +5,7 @@ import { CheckboxGroupProps } from './CheckboxGroup.props';
 import styles from './CheckboxGroup.module.scss';
 import { Checkbox } from '../Checkbox';
 import { Button } from '../../Button';
+import { Skeleton } from '@/app/components/common/Skeleton';
 
 export const CheckboxGroup = ({
   title,
@@ -14,8 +15,8 @@ export const CheckboxGroup = ({
   selected,
   searchInputPlaceholder = 'Поиск...',
   onClickChange,
-  defaultValue,
   name,
+  loading,
 }: CheckboxGroupProps) => {
   const [showAll, setShowAll] = React.useState(false);
   const [seacrhValue, setSearchValue] = React.useState('');
@@ -43,16 +44,20 @@ export const CheckboxGroup = ({
       )}
       <div>
         <div className={styles.group_items}>
-          {list?.map((item, index) => (
-            <Checkbox
-              key={index}
-              text={item.text}
-              value={item.value}
-              checked={selected?.has(item.value)}
-              onChackedChange={() => onClickChange?.(item.value)}
-              name={name}
-            />
-          ))}
+          {loading ? (
+            <Skeleton version={'component'} />
+          ) : (
+            list?.map((item, index) => (
+              <Checkbox
+                key={index}
+                text={item.text}
+                value={item.value}
+                checked={selected?.has(item.value)}
+                onChackedChange={() => onClickChange?.(item.value)}
+                name={name}
+              />
+            ))
+          )}
         </div>
         {items.length > limit && (
           <Button

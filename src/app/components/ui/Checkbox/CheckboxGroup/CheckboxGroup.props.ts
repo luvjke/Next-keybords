@@ -7,7 +7,7 @@ export interface CheckboxGroupProps {
   limit?: number;
   searchInputPlaceholder?: string;
   onClickChange?: (id: string) => void;
-  defaultValue?: string;
   selected?: Set<string>;
   name?: string;
+  loading?: boolean;
 }

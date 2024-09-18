@@ -10,7 +10,7 @@
 
   .image {
     height: 215px;
-    width: 215px;
+    width: 340px;
   }
 }
 
@@ -23,7 +23,7 @@
 
 .description {
   color: $main-gray;
-  font-size: 17px;
+  font-size: 14px;
 }
 
 .container_under {
@@ -40,4 +40,18 @@
 
 .link {
   text-decoration: none;
+}
+
+.slider_wrapper {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.slider_pagination {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  position: absolute;
+  width: 100%;
 }

@@ -10,7 +10,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
     | 'pagination'
     | 'categories'
     | 'modal'
-    | 'cart';
+    | 'cart'
+    | 'default'
+    | 'link';
   lversion: 'regular' | 'bold' | 'medium';
   label: string;
   icon?: ReactNode;

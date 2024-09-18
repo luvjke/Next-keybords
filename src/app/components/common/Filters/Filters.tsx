@@ -4,13 +4,14 @@ import React from 'react';
 import styles from './Filters.module.scss';
 import { CheckboxGroup } from '../../ui/Checkbox/CheckboxGroup';
 import { useComponenets, useFilters, useQuryFiltes } from '../../../../../shared/hooks';
+import { Component } from '@prisma/client';
 
 export const Filters = () => {
-  const { components } = useComponenets();
+  const { components, isLoading } = useComponenets();
   const filters = useFilters();
   useQuryFiltes(filters);
 
-  const items = components.map((component) => ({
+  const items = components.map((component: Component) => ({
     value: String(component.id),
     text: component.name,
   }));
@@ -78,6 +79,7 @@ export const Filters = () => {
         onClickChange={filters.setComponents}
         selected={filters.selectedComponents}
         name="components"
+        loading={isLoading}
       />
     </div>
   );

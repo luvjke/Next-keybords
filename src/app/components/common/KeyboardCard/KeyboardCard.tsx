@@ -5,7 +5,7 @@ import styles from './KeyboardCard.module.scss';
 import { KeyboardCardProps } from './KeyboardCard.props';
 import { Button } from '../../ui/Button';
 
-export const KeyboardCard = ({ id, name, price, imageUrl }: KeyboardCardProps) => {
+export const KeyboardCard = ({ id, name, price, imageUrl, components }: KeyboardCardProps) => {
   return (
     <div>
       <Link href={`/product/${id}`} className={styles.link}>
@@ -14,12 +14,13 @@ export const KeyboardCard = ({ id, name, price, imageUrl }: KeyboardCardProps) =
         </div>
 
         <h3 className={styles.title}>{name}</h3>
-        <p className={styles.description}>ЧСячсячсячсячфыsadasdas asdasdasdsasdaasddsasda a</p>
+        <p className={styles.description}>
+          {components.map((component) => component.name).join(', ')}
+        </p>
         <div className={styles.container_under}>
           <span className={styles.price}>
-            от <b>{price} Р</b>
+            от <b>{price} ₽</b>
           </span>
-
           <Button version={'unfilled'} lversion={'bold'} label={'Добавить'} />
         </div>
       </Link>

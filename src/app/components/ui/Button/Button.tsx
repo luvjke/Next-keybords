@@ -42,7 +42,7 @@ export const Button = ({
     </button>
   ) : (
     <Link href={href ?? ''} className={buttonClassNames}>
-      {label}
+      <span className={labelClassNames}>{label}</span>
     </Link>
   );
 };

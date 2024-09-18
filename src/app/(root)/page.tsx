@@ -17,7 +17,7 @@ export default async function Home({ searchParams }: { searchParams: GetSearchPa
       <div className={styles.sort}>
         <div className={styles.sort_container}>
           <Categories items={categories.filter((category) => category.products.length > 0)} />
-          <Popup active={false} setActive={() => 123} />
+          {/* <Popup active={false} setActive={() => 123} /> */}
         </div>
       </div>
       <div className={styles.keyboards_container}>

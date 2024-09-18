@@ -56,8 +56,8 @@ export const Header: React.FC<Props> = ({ hasSearch = true }) => {
             />
           ) : (
             <Button
-              version={'unfilled'}
-              lversion={'regular'}
+              version={'custom'}
+              lversion={'bold'}
               label={'Профиль'}
               tag="link"
               href={'/profile'}

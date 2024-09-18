@@ -29,6 +29,7 @@ export const CardGroupList = ({ title, items, categoryId }: CardGroupListProps) 
             name={product.name}
             price={product.items[0]?.price}
             imageUrl={product.imageUrl}
+            components={product.components}
           />
         ))}
       </div>
