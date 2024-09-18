@@ -26,7 +26,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit: _on
   if (isKeyboardForm) {
     return (
       <ChooseKeyboardForm
-        imageUrl={product.imageUrl}
+        imageUrl={product.imageUrl.split('PR')[0]}
         name={product.name}
         components={product.components}
         items={product.items}
@@ -37,7 +37,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ product, onSubmit: _on
   }
   return (
     <ChooseProductForm
-      imageUrl={product.imageUrl}
+      imageUrl={product.imageUrl.split('PR')[0]}
       name={product.name}
       onSubmit={onSubmit}
       price={firstItem.price}

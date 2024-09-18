@@ -3,7 +3,7 @@ import React from 'react';
 
 import Image from 'next/image';
 import styles from './CartDrawer.module.scss';
-import Link from 'next/link';
+
 import { Button } from '../../ui/Button';
 import classNames from 'classnames';
 import { useClickAway } from 'react-use';
@@ -59,7 +59,7 @@ export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ childre
                   <li className={styles.item} key={item.id}>
                     <CartDrawerItem
                       id={item.id}
-                      imageUrl={item.imageUrl}
+                      imageUrl={item.imageUrl.split('PR')[0]}
                       details={getCartItemDetails(
                         item.components,
                         item.keyboardType as KeyboardType,

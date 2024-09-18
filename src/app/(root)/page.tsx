@@ -9,6 +9,7 @@ import styles from './page.module.scss';
 
 export default async function Home({ searchParams }: { searchParams: GetSearchParams }) {
   const categories = await findKeyboards(searchParams);
+  console.log(categories);
   return (
     <>
       <div className={styles.container}>

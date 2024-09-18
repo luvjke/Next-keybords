@@ -1,16 +1,21 @@
 @import '../../../scss/variables';
 
+.container {
+  width: fit-content;
+}
+
 .container_image {
   background-color: $second-white;
   border-radius: 8px;
   display: flex;
   height: 260px;
+  width: fit-content;
   justify-content: center;
   padding: 24px;
 
   .image {
-    height: 215px;
-    width: 340px;
+    height: 245px;
+    width: 250px;
   }
 }
 

@@ -54,14 +54,16 @@ async function up() {
 
   const Keyboard1 = await prisma.product.create({
     data: {
-      name: 'HyperX Alloy FPS Pro',
-      imageUrl: 'https://hyperx.ru/hyperx/product/hx-product-keyboard-alloy-pro-ru-1-zm-lg.jpg',
+      name: 'Varmilo Victory 67',
+      imageUrl:
+        'https://static.insales-cdn.com/images/products/1/2166/837912694/large_varmilo-victory-11.webpPRhttps://static.insales-cdn.com/images/products/1/5533/838325661/large_varmilo-victory__9_.webpPRhttps://static.insales-cdn.com/images/products/1/5523/838325651/large_varmilo-victory__2_.webpPR',
       categoryId: 1,
       components: {
         connect: components.slice(0, 5),
       },
     },
   });
+
   const Keyboard2 = await prisma.product.create({
     data: {
       name: 'Logitech G213 Prodigy',
@@ -85,6 +87,17 @@ async function up() {
     },
   });
 
+  const Keyboard4 = await prisma.product.create({
+    data: {
+      name: 'Varmilo Koi V2 87',
+      imageUrl:
+        'https://static.insales-cdn.com/images/products/1/5675/596555307/large_12.jpgPRhttps://static.insales-cdn.com/images/products/1/5642/596555274/large_1.jpgPRhttps://static.insales-cdn.com/images/products/1/5655/596555287/large_2.jpgPR',
+      categoryId: 4,
+      components: {
+        connect: components.slice(0, 6),
+      },
+    },
+  });
   await prisma.productItem.createMany({
     data: [
       generateProductItem({ productId: Keyboard1.id, keyboardType: 1, size: 75, price: 7499 }),
@@ -98,6 +111,10 @@ async function up() {
       generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 75, price: 5999 }),
       generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 100, price: 5499 }),
       generateProductItem({ productId: Keyboard3.id, keyboardType: 1, size: 60, price: 6599 }),
+
+      generateProductItem({ productId: Keyboard4.id, keyboardType: 1, size: 75, price: 16190 }),
+      generateProductItem({ productId: Keyboard4.id, keyboardType: 1, size: 100, price: 16190 }),
+      generateProductItem({ productId: Keyboard4.id, keyboardType: 2, size: 60, price: 17190 }),
 
       generateProductItem({ productId: 1, price: 1590 }),
       generateProductItem({ productId: 2, price: 2490 }),

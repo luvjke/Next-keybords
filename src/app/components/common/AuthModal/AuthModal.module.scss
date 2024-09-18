@@ -1,4 +1,9 @@
+@import '../../../scss/variables';
+
 .auth_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 450px;
 }
 
@@ -15,4 +20,26 @@
     font-size: 26px;
     font-weight: 800;
   }
+}
+
+.login_form {
+  margin-bottom: 20px;
+}
+
+.auth_buttons {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.user_icon {
+  color: $main-black;
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.auth_regbutton {
+  margin: 20px 0;
 }

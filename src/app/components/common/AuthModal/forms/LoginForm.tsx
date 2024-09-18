@@ -47,9 +47,10 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
           </div>
           <Image src="/icons/phone-icon.png" alt="phone-icon" width={60} height={60} />
         </div>
-
-        <FormInput name="email" label="E-mail" required />
-        <FormInput name={'password'} label={'Пароль'} type={'password'} required />
+        <div className={styles.login_form}>
+          <FormInput name="email" label="E-mail" required />
+          <FormInput name={'password'} label={'Пароль'} type={'password'} required />
+        </div>
 
         <Button label={'Войти'} version={'unfilled'} lversion={'regular'} />
       </form>

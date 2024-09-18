@@ -74,20 +74,20 @@ export const products = [
   {
     name: 'Клавиша ZOMO «Кошачья лапка»',
     imageUrl:
-      'https://static.insales-cdn.com/images/products/1/432/274301360/large_лапка_кошка.jpg',
+      'https://static.insales-cdn.com/images/products/1/432/274301360/large_лапка_кошка.jpgPRhttps://static.insales-cdn.com/images/products/1/3150/271871054/large_paw4.jpgPRhttps://static.insales-cdn.com/images/products/1/4449/273199457/large_лапка_кошка_2.jpgPR',
     categoryId: 6,
   },
   {
     name: 'Клавиша Wuzenkey «Moai Ancient Stone»',
     imageUrl:
-      'https://static.insales-cdn.com/images/products/1/249/771301625/large_wuse_keycap_moai_ancient_stone_1__1_.webp',
+      'https://static.insales-cdn.com/images/products/1/249/771301625/large_wuse_keycap_moai_ancient_stone_1__1_.webpPRhttps://static.insales-cdn.com/images/products/1/242/771301618/large_wuse_keycap_moai_ancient_stone_1__3_.webpPRhttps://static.insales-cdn.com/images/products/1/243/771301619/large_wuse_keycap_moai_ancient_stone_1__4_.webpPR',
     categoryId: 6,
   },
   {
     name: 'Клавиша Wuzenkey «Octopus Ember»',
     imageUrl:
-      'https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webp',
-    // https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webpPRhttps://static.insales-cdn.com/images/products/1/1172/751740052/large_wuse_octopus_ember_3.webpPRhttps://static.insales-cdn.com/images/products/1/1173/751740053/large_wuse_octopus_ember_2.webpPR'
+      // 'https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webp',
+      'https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webpPRhttps://static.insales-cdn.com/images/products/1/1172/751740052/large_wuse_octopus_ember_3.webpPRhttps://static.insales-cdn.com/images/products/1/1173/751740053/large_wuse_octopus_ember_2.webpPR',
     categoryId: 6,
   },
 ];

@@ -7,6 +7,7 @@ import { FormInput } from '@/app/components/ui/FormInput';
 import { Button } from '@/app/components/ui/Button';
 import { registerUser } from '@/app/actions';
 
+import styles from '../AuthModal.module.scss';
 interface Props {
   onClose?: VoidFunction;
   onClickLogin?: VoidFunction;
@@ -40,7 +41,9 @@ export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
         <FormInput name="password" label="Пароль" type="password" required />
         <FormInput name="confirmPassword" label="Подтвердите пароль" type="password" required />
 
-        <Button type="submit" label="Зарегистрироваться" version={'unfilled'} lversion={'bold'} />
+        <div className={styles.auth_regbutton}>
+          <Button type="submit" label="Зарегистрироваться" version={'unfilled'} lversion={'bold'} />
+        </div>
       </form>
     </FormProvider>
   );

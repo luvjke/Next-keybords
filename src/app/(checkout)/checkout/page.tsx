@@ -47,6 +47,7 @@ export default function CheckoutPage() {
       form.setValue('lastName', lastName);
       form.setValue('email', data.email);
     }
+
     if (session) {
       fetchUserInfo();
     }
@@ -88,7 +89,7 @@ export default function CheckoutPage() {
                         <li key={item.id}>
                           <CheckoutItem
                             id={item.id}
-                            imageUrl={item.imageUrl}
+                            imageUrl={item.imageUrl.split('PR')[0]}
                             details={getCartItemDetails(
                               item.components,
                               item.keyboardType as KeyboardType,
@@ -128,7 +129,9 @@ export default function CheckoutPage() {
                     </>
                   )}
                 />
-                <FormInput name={'comment'} placeholder={'Комментарии'} textArea={true} />
+                <div className={styles.comment}>
+                  <FormInput name={'comment'} placeholder={'Комментарии'} textArea={true} />
+                </div>
               </WhiteBlock>
             </div>
             <div className={styles.sidebar}>

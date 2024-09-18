@@ -61,7 +61,7 @@ export const SearchInput = () => {
                   className={styles.link}
                 >
                   <img
-                    src={product.imageUrl}
+                    src={product.imageUrl.split('PR')[0]}
                     alt={product.name}
                     width={32}
                     height={32}
