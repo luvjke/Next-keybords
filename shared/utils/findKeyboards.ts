@@ -11,7 +11,7 @@ export interface GetSearchParams {
 }
 
 const DEFAULT_MIN_PRICE = 0;
-const DEFAULT_MAX_PRICE = 10000;
+const DEFAULT_MAX_PRICE = 30000;
 
 export const findKeyboards = async (params: GetSearchParams) => {
   const sizes = params.sizes?.split(',').map(Number);

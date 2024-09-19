@@ -20,7 +20,7 @@ export const Filters = () => {
     <div className={styles.filter_box}>
       <h2 className={styles.title}>Фильтрация</h2>
 
-      <CheckboxGroup
+      {/* <CheckboxGroup
         title={'Беспроводная клавиатура:'}
         items={[
           { text: 'Нет', value: '2' },
@@ -29,7 +29,7 @@ export const Filters = () => {
         onClickChange={filters.setTypes}
         selected={filters.types}
         name="type"
-      />
+      /> */}
       <CheckboxGroup
         title={'Размер:'}
         items={[

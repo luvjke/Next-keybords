@@ -72,9 +72,9 @@ export const components = [
 
 export const products = [
   {
-    name: 'Клавиша ZOMO «Кошачья лапка»',
+    name: 'Клавиша ZOMO X B.Duck Уточка',
     imageUrl:
-      'https://static.insales-cdn.com/images/products/1/432/274301360/large_лапка_кошка.jpgPRhttps://static.insales-cdn.com/images/products/1/3150/271871054/large_paw4.jpgPRhttps://static.insales-cdn.com/images/products/1/4449/273199457/large_лапка_кошка_2.jpgPR',
+      'https://static.insales-cdn.com/images/products/1/2601/789948969/large_zomo_b.duck_duck.jpgPRhttps://static.insales-cdn.com/images/products/1/1260/789660908/large_zomo_b.duck_duck_14.webpPRhttps://static.insales-cdn.com/images/products/1/1261/789660909/large_zomo_b.duck_duck_12.webpPR',
     categoryId: 6,
   },
   {
@@ -88,6 +88,31 @@ export const products = [
     imageUrl:
       // 'https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webp',
       'https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webpPRhttps://static.insales-cdn.com/images/products/1/1172/751740052/large_wuse_octopus_ember_3.webpPRhttps://static.insales-cdn.com/images/products/1/1173/751740053/large_wuse_octopus_ember_2.webpPR',
+    categoryId: 6,
+  },
+  {
+    name: 'Клавиши Geekboards «Mac OS» Retro White',
+    imageUrl:
+      // 'https://static.insales-cdn.com/images/products/1/1170/751740050/large_wuse_octopus_ember_4.webp',
+      'https://static.insales-cdn.com/images/products/1/7879/743513799/large_2__1_.jpgPRhttps://static.insales-cdn.com/images/products/1/1443/743654819/large_17.jpgPRhttps://static.insales-cdn.com/images/products/1/7876/743513796/large_1__1_.jpgPR',
+    categoryId: 6,
+  },
+  {
+    name: 'Клавиша Wuzenkey «Owl Gloom»',
+    imageUrl:
+      'https://static.insales-cdn.com/images/products/1/8115/771178419/large_wuse_keycap_owl_gloom_02.webpPRhttps://static.insales-cdn.com/images/products/1/8116/771178420/large_wuse_keycap_owl_gloom_01.webpPRhttps://static.insales-cdn.com/images/products/1/8113/771178417/large_wuse_keycap_owl_gloom_03.webpPR',
+    categoryId: 6,
+  },
+  {
+    name: 'Клавиша Wuzenkey «USSR Remnant»',
+    imageUrl:
+      'https://static.insales-cdn.com/images/products/1/1718/771196598/large_wuse_keycap_ussr_remnant_01.webpPRhttps://static.insales-cdn.com/images/products/1/1715/771196595/large_wuse_keycap_ussr_remnant_02.webpPRhttps://static.insales-cdn.com/images/products/1/1716/771196596/large_wuse_keycap_ussr_remnant_03.webpPR',
+    categoryId: 6,
+  },
+  {
+    name: 'Набор прозрачных клавиш Akko «Clear White»',
+    imageUrl:
+      'https://static.insales-cdn.com/images/products/1/7494/644750662/large_full-set-white-rgb.jpgPRhttps://static.insales-cdn.com/images/products/1/2010/835839962/large_akko-clear-white-set.webpPRhttps://static.insales-cdn.com/images/products/1/7418/641645818/large_full-set-white-side.jpg',
     categoryId: 6,
   },
 ];
