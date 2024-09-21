@@ -4,14 +4,16 @@ import { ProductFormProps } from './ChooseProductForm.props';
 import styles from './ChooseProductForm.module.scss';
 import { ProductImage } from '../ProductImage';
 import { Button } from '../../ui/Button';
+import classNames from 'classnames';
 export const ChooseProductForm: React.FC<ProductFormProps> = ({
   name,
   price,
   imageUrl,
   onSubmit,
+  loading,
 }) => {
   return (
-    <div className={styles.form}>
+    <div className={classNames(styles.form, loading && styles.loading)}>
       <ProductImage imageUrl={imageUrl} size={60} />
 
       <div className={styles.information_container}>

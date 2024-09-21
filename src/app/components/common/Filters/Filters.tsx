@@ -66,8 +66,8 @@ export const Filters = () => {
           type="number"
           placeholder="1000"
           min={500}
-          max={15000}
-          value={String(filters.prices.priceTo || '15000')}
+          max={30000}
+          value={String(filters.prices.priceTo || '30000')}
           onChange={(element) => filters.setPrices('priceTo', Number(element.target.value))}
         />
       </div>

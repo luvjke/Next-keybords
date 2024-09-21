@@ -16,6 +16,7 @@ import {
 import { Component } from '../../Component';
 import { calcKeyboardsPrice } from '../../../../../../shared/utils/calcKeyboardsPrice';
 import { useKeyboardOptions } from '../../../../../../shared/hooks';
+import classNames from 'classnames';
 
 export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
   name,
@@ -23,6 +24,7 @@ export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
   imageUrl,
   onSumbit,
   components,
+  loading,
 }) => {
   const {
     size,
@@ -45,7 +47,7 @@ export const ChooseKeyboardForm: React.FC<KeyboardFormProps> = ({
   };
 
   return (
-    <div className={styles.form}>
+    <div className={classNames(styles.form, loading && styles.loading)}>
       <ProductImage imageUrl={imageUrl} size={size} />
 
       <div className={styles.information_container}>

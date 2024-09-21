@@ -10,7 +10,9 @@ import { useCategoryStore } from '../../../../../shared/store/category';
 export const CardGroupList = ({ title, items, categoryId }: CardGroupListProps) => {
   const setActiveCategoryId = useCategoryStore((state) => state.setActiveId);
   const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, { threshold: 0.4 });
+  const intersection = useIntersection(intersectionRef, {
+    threshold: 0.4,
+  });
 
   React.useEffect(() => {
     if (intersection?.isIntersecting) {
@@ -20,7 +22,6 @@ export const CardGroupList = ({ title, items, categoryId }: CardGroupListProps) 
   return (
     <div className={styles.container} id={title} ref={intersectionRef}>
       <h1 className={styles.title}>{title}</h1>
-
       <div className={styles.container_grid}>
         {items.map((product) => (
           <KeyboardCard

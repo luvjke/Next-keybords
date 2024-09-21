@@ -6,9 +6,12 @@
 }
 
 .information_container {
-  background: #f7f6f5;
+  background: $modal-background-light;
   border-radius: 12px;
-  min-width: 490px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: fit-content;
   padding: 28px;
 
   .title {
@@ -33,4 +36,9 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   max-height: 420px;
   overflow: auto;
+}
+
+.loading {
+  opacity: 0.5;
+  pointer-events: none;
 }

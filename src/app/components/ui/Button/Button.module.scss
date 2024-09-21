@@ -8,9 +8,38 @@
 
   //   @include focus();
   position: relative;
+  transition-duration: 300ms;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow,
+    transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:active {
+    animation: shake 0.2s ease-in-out;
+  }
 
   &:disabled {
     pointer-events: none;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(-3px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(3px);
   }
 }
 
@@ -62,7 +91,7 @@
 }
 
 .modal {
-  background-color: $main-gray;
+  background-color: $second-color-dark;
   border-radius: 18px;
   margin-top: 20px;
   padding: 13px;
