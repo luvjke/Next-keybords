@@ -15,13 +15,13 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
   const onSwitchType = () => {
     setType((prev) => (prev === 'login' ? 'register' : 'login'));
   };
+
   const ref = React.useRef(null);
 
   useClickAway(ref, () => {
     onClose?.();
     setType('login');
   });
-
   return (
     <Modal
       active={open}
@@ -30,33 +30,35 @@ export const AuthModal: React.FC<AuthModalProps> = ({ open, onClose }) => {
       version_content={'modal_content_auth'}
     >
       <div className={styles.auth_content} ref={ref}>
-        {type === 'login' ? <LoginForm onClose={onClose} /> : <RegisterForm onClose={onClose} />}
+        <div className={styles.auth_container}>
+          {type === 'login' ? <LoginForm onClose={onClose} /> : <RegisterForm onClose={onClose} />}
 
-        {type === 'login' ? (
-          <div className={styles.auth_buttons}>
-            <Button
-              onClick={() => signIn('github', { callbackUrl: '/', redirect: true })}
-              version={'outline'}
-              label={'GitHub'}
-              icon={<Github width={16} height={18} className={styles.user_icon} />}
-              lversion={'regular'}
-            />
+          {type === 'login' ? (
+            <div className={styles.auth_buttons}>
+              <Button
+                onClick={() => signIn('github', { callbackUrl: '/', redirect: true })}
+                version={'outline'}
+                label={'GitHub'}
+                icon={<Github width={16} height={18} className={styles.user_icon} />}
+                lversion={'regular'}
+              />
 
-            <Button
-              onClick={() => signIn('google', { callbackUrl: '/', redirect: true })}
-              version={'outline'}
-              label={'Google'}
-              icon={<Warehouse width={16} height={18} className={styles.user_icon} />}
-              lversion={'regular'}
-            />
-          </div>
-        ) : null}
-        <Button
-          onClick={onSwitchType}
-          label={type === 'login' ? 'Зарегистрироваться' : 'Войти'}
-          version={'unfilled'}
-          lversion={'bold'}
-        />
+              <Button
+                onClick={() => signIn('google', { callbackUrl: '/', redirect: true })}
+                version={'outline'}
+                label={'Google'}
+                icon={<Warehouse width={16} height={18} className={styles.user_icon} />}
+                lversion={'regular'}
+              />
+            </div>
+          ) : null}
+          <Button
+            onClick={onSwitchType}
+            label={type === 'login' ? 'Зарегистрироваться' : 'Войти'}
+            version={'unfilled'}
+            lversion={'bold'}
+          />
+        </div>
       </div>
     </Modal>
   );

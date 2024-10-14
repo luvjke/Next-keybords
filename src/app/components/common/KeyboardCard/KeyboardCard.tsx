@@ -8,7 +8,7 @@ import { SliderImage } from '../SliderImage';
 
 export const KeyboardCard = ({ id, name, price, imageUrl, components }: KeyboardCardProps) => {
   return (
-    <div className={styles.container}>
+    <li className={styles.container}>
       <Link href={`/product/${id}`} className={styles.link}>
         {/* <div className={styles.container_image}>
           <img className={styles.image} src={imageUrl} alt={name} />
@@ -29,6 +29,6 @@ export const KeyboardCard = ({ id, name, price, imageUrl, components }: Keyboard
           <Button version={'default'} lversion={'bold'} label={'Добавить'} />
         </div>
       </Link>
-    </div>
+    </li>
   );
 };

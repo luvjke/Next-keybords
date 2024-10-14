@@ -32,7 +32,7 @@ export const Button = ({
     </button>
   ) : tag === 'cart_button' ? (
     <button className={buttonClassNames} onClick={onClick} disabled={disabled} {...props}>
-      <b>{price || 0} ₽</b>
+      <b className={styles.cart_b}>{price || 0} ₽</b>
       <span className={styles.cart_span} />
       <div className={styles.cart_div}>
         <ShoppingCart size={16} />

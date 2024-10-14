@@ -1,10 +1,17 @@
 @import '../../../scss/variables';
 
 .auth_content {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  height: 690px;
   justify-content: center;
-  width: 450px;
+  width: 560px;
+}
+
+.auth_container {
+  max-width: 450px;
+  width: 100%;
 }
 
 .login_container {

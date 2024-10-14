@@ -14,7 +14,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
   &:active {
-    animation: shake 0.2s ease-in-out;
+    animation: press 0.2s ease-in-out;
   }
 
   &:disabled {
@@ -22,24 +22,14 @@
   }
 }
 
-@keyframes shake {
+@keyframes press {
   0%,
   100% {
-    transform: translateX(0);
+    transform: translateY(0);
   }
 
-  10%,
-  30%,
-  50%,
-  70% {
-    transform: translateX(-3px);
-  }
-
-  20%,
-  40%,
-  60%,
-  80% {
-    transform: translateX(3px);
+  50% {
+    transform: translateY(-2px);
   }
 }
 
@@ -135,6 +125,10 @@
   width: 1px;
 }
 
+.cart_b {
+  white-space: nowrap;
+}
+
 .cart_div {
   align-items: center;
   display: flex;
@@ -187,7 +181,7 @@
   background: none;
   border: 1px solid $main-black;
   border-radius: 10px;
-  padding: 15px;
+  padding: 10px;
   text-decoration: none;
 
   &:hover {

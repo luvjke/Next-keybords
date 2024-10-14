@@ -8,6 +8,7 @@ import { Button } from '@/app/components/ui/Button';
 import { registerUser } from '@/app/actions';
 
 import styles from '../AuthModal.module.scss';
+import toast from 'react-hot-toast';
 interface Props {
   onClose?: VoidFunction;
   onClickLogin?: VoidFunction;
@@ -30,13 +31,21 @@ export const RegisterForm: React.FC<Props> = ({ onClose, onClickLogin }) => {
         fullName: data.fullName,
         password: data.password,
       });
-    } catch (error) {}
+      toast.error('Регистрация успешна 📝. Подтвердите свою почту', {
+        icon: '✅',
+      });
+      onClose?.();
+    } catch (error) {
+      return toast.error('Неверный E-Mail или пароль', {
+        icon: '❌',
+      });
+    }
   };
   return (
     <FormProvider {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
         <FormInput name="email" label="E-mail" required />
-        <FormInput name="fullName" label="Полное имя" required />
+        <FormInput name="fullName" label="Имя пользователя" required />
 
         <FormInput name="password" label="Пароль" type="password" required />
         <FormInput name="confirmPassword" label="Подтвердите пароль" type="password" required />

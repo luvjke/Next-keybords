@@ -7,6 +7,7 @@ import { FormInput } from '@/app/components/ui/FormInput';
 import { Button } from '@/app/components/ui/Button';
 import { signIn } from 'next-auth/react';
 import Image from 'next/image';
+import toast from 'react-hot-toast';
 
 interface Props {
   onClose?: VoidFunction;
@@ -31,10 +32,15 @@ export const LoginForm: React.FC<Props> = ({ onClose }) => {
       if (!resp?.ok) {
         throw new Error();
       }
+      toast.success('Вы успешно вошли в аккаунт', {
+        icon: '✅',
+      });
 
       onClose?.();
     } catch (error) {
-      alert('Неверное имя пользователя или пароль');
+      toast.error('Не удалось войти в аккаунт', {
+        icon: '❌',
+      });
     }
   };
   return (

@@ -11,7 +11,8 @@ import { CartDrawer } from '../CartDrawer';
 import { useCartStore } from '../../../../../shared/store/cart';
 import { useSession, signIn } from 'next-auth/react';
 import { AuthModal } from '../AuthModal';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
+import toast from 'react-hot-toast';
 
 interface Props {
   hasSearch?: boolean;
@@ -26,15 +27,37 @@ export const Header: React.FC<Props> = ({ hasSearch = true }) => {
     state.items,
     state.loading,
   ]);
-  // Сделать тост успешной оплаты
+  const searchParams = useSearchParams();
+  React.useEffect(() => {
+    let toastMessage = '';
+
+    if (searchParams.has('paid')) {
+      toastMessage = 'Заказ успешно оплачен! Информация отправлена на почту.';
+    }
+
+    if (searchParams.has('verified')) {
+      toastMessage = 'Почта успешно подтверждена!';
+    }
+
+    if (toastMessage) {
+      setTimeout(() => {
+        router.replace('/');
+        toast.success(toastMessage, {
+          duration: 3000,
+        });
+      }, 1000);
+    }
+  }, []);
   return (
     <header className={styles.header}>
       <div className={styles.container}>
         <Link className={styles.link} href={`/`}>
           <div className={styles.logo_box}>
-            <Keyboard width={35} height={35} />
             <div>
               <h1 className={styles.under_image}>Next keyboard</h1>
+            </div>
+            <div>
+              <Keyboard width={35} height={35} />
             </div>
           </div>
         </Link>

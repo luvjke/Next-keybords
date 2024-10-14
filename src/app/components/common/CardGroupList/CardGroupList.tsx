@@ -22,7 +22,7 @@ export const CardGroupList = ({ title, items, categoryId }: CardGroupListProps) 
   return (
     <div className={styles.container} id={title} ref={intersectionRef}>
       <h1 className={styles.title}>{title}</h1>
-      <div className={styles.container_grid}>
+      <ul className={styles.container_grid}>
         {items.map((product) => (
           <KeyboardCard
             key={product.id}
@@ -33,7 +33,7 @@ export const CardGroupList = ({ title, items, categoryId }: CardGroupListProps) 
             components={product.components}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 };
