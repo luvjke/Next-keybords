@@ -13,6 +13,7 @@ import { getCartItemDetails } from '../../../../../shared/utils/getCartItemDetai
 import { KeyboardSize, KeyboardType } from '../../../../../shared/constans/keyboards';
 import { useCart } from '../../../../../shared/hooks';
 import { CheckoutDetails } from '../CheckoutDetails';
+import { X } from 'lucide-react';
 
 export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ children }) => {
   const { totalAmount, updateItemQuantity, items, removeCartItem } = useCart();
@@ -40,6 +41,7 @@ export const CartDrawer: React.FC<{ children: React.ReactElement }> = ({ childre
             <h2>
               В корзине {items.length} {items.length > 1 ? 'товара' : 'товар'}
             </h2>
+            <X onClick={() => setContent(false)} className={styles.x_icon} />
           </div>
         )}
         <div className={classNames(styles.sheet_body, !totalAmount && styles.sheet_body_empty)}>

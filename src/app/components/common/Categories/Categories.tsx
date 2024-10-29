@@ -12,7 +12,7 @@ export const Categories: React.FC<CategoriesProps> = ({ items }) => {
   return (
     <ul className={styles.container}>
       {items.map(({ name, id }) => (
-        <li className={styles.li} key={id}>
+        <li className={styles.li_item} key={id}>
           <a
             href={`/#${name}`}
             className={classNames(styles.link, activeCategoryId === id && styles.active_link)}

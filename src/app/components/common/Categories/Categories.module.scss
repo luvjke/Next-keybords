@@ -1,30 +1,34 @@
 @import '../../../scss/variables';
 
-.sort_container {
-}
 .container {
-  display: inline-flex;
-  width: fit-content;
-  gap: 4px;
   background-color: #f9fafb;
-  padding: 4px;
   border-radius: 16px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 4px;
+  width: fit-content;
+  @media (max-width: 590px) {
+    justify-content: center;
+  }
 }
+
 .link {
-  display: flex;
   align-items: center;
+  border-radius: 16px;
+  display: flex;
   font-weight: 700;
   height: 44px;
-  border-radius: 16px;
   padding: 0 20px;
   text-decoration: none;
 }
+
 .active_link {
   background-color: $main-white;
   box-shadow: $categories-box-shadow;
   color: $main-black;
 }
 
-.li {
+.li_item {
   list-style: none;
 }
